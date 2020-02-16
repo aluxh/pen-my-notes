@@ -1,23 +1,23 @@
-# AWS SDK
+# Using AWS SDK to automate Redshift cluster creation and deletion
 
-The following is to demonstrate the infrastructure as code using AWS SDK.
+Notes taken from Udacity Data Engineering Nanodegree to automate the creation, and removal of Redshift Cluster. And, also setting up S3 bucket for storing and loading raw data.
 
-## Creating Redshift Cluster using the AWS python SDK
+The following is for playing with Redshift database, and at the same time, not spending too much on it. Automating the creation and removal of the Redshift clusters has helped me saved a lot.
 
-Few libraries you need are `pandas`, `boto3` (AWS SDK), `json` packages. And, the steps are as follows:
+## To Begin
 
-### Prepare the params and environment
+There are few libraries needed - `configparser` and `boto3`. I've also used `Pandas` library in the below example.
 
-1. Using an external `cfg` file to store all the params, and load into notebook using `configparser`.
+### Prepare the parameters and environment
 
-- How the config file looks like:
+- Create an external **cfg** file to store all the params, and load into **python** script using `configparser`. And, the following is how the config file looks like:
 
 ```config
 [AWS]
 KEY=key
 SECRET=secret
 
-[DWH] 
+[DWH]
 DWH_CLUSTER_TYPE=multi-node
 DWH_NUM_NODES=4
 DWH_NODE_TYPE=dc2.large
@@ -30,10 +30,14 @@ DWH_DB_PASSWORD=Passw0rd
 DWH_PORT=5439
 ```
 
-- How the python script looks like to load into the notebook:
+### Load the parameters into script
 
-```python
+The following demonstrate how to load the parameters into the notebook:
+
+```Python
 import configparser
+import pandas as pd
+
 config                  = configparser.ConfigParser()
 config.read_file(open('dwh.cfg'))
 
@@ -61,14 +65,14 @@ pd.DataFrame({"Param":
 })
 ```
 
-1. Create the resources and clients for EC2, S3, IAM and Redshift
+### Set up the resources and clients for EC2, S3, IAM and Redshift
 
-   Using `boto3` library, create resources and clients in AWS.
+Using `boto3` library, create resources and clients in AWS.
 
-```python
+```Python
 import boto3
 
-ec2 = boto3.resource('ec2',
+ec2 = boto3.resource('ec2', 
                 region_name='us-west-2',
                 aws_access_key_id=KEY,
                 aws_secret_access_key=SECRET)
@@ -89,7 +93,9 @@ redshift = boto3.client('redshift',
                 aws_secret_access_key=SECRET)
 ```
 
-1. Try printing out sample data sources from s3 using the following template:
+### Test your connection to s3 bucket that store your data sources
+
+Try printing out the data sources from s3 using the following template:
 
 ```python
 sampleDbBucket = s3.Bucket("bucket-name")
@@ -116,7 +122,6 @@ try:
                'Version': '2012-10-17'}
         )
     )
-
 except Exception as e:
     print(e)
 
@@ -134,9 +139,9 @@ roleArn = iam.get_role(RoleName=DWH_IAM_ROLE_NAME)['Role']['Arn']
 print(roleArn)
 ```
 
-### Create Redshift Cluster
+## Create Redshift Cluster
 
-Creating the redshift cluster using the standard template. 
+Creating the redshift cluster using the standard template. You can check the script to automate this via [carpark-sg-data-pipeline](https://github.com/aluxh/carpark-sg-data-pipeline/blob/master/notebooks/create_redshift.py)
 
 ```python
 try:
@@ -194,12 +199,12 @@ try:
         IpProtocol='TCP',
         FromPort=int(DWH_PORT),
         ToPort=int(DWH_PORT)
-    )
+)
 except Exception as e:
     print(e)
 ```
 
-Test that you can access the cluster
+### Test that you can access the cluster
 
 ```sql
 %load_ext sql
@@ -207,4 +212,50 @@ Test that you can access the cluster
 conn_string="postgresql://{}:{}@{}:{}/{}".format(DWH_DB_USER, DWH_DB_PASSWORD, DWH_ENDPOINT, DWH_PORT,DWH_DB)
 print(conn_string)
 %sql $conn_string
+```
+
+## Remove Redshift Cluster
+
+### Fetch Parameters
+
+```Python
+print("1. Fetch params")
+KEY, SECRET = get_config('access.cfg', 'AWS')
+DWH_CLUSTER_TYPE, DWH_NUM_NODES, DWH_NODE_TYPE, DWH_CLUSTER_IDENTIFIER, DWH_DB, DWH_DB_USER, DWH_DB_PASSWORD, DWH_PORT, DWH_IAM_ROLE_NAME = get_config('dwh.cfg', 'DWH')
+```
+
+### Setup Resources and Clients
+
+```Python
+# Setup resources and clients
+print("2. Setup Clients")
+iam = boto3.client('iam',region_name='us-west-2', aws_access_key_id=KEY, aws_secret_access_key=SECRET)
+redshift = boto3.client('redshift', region_name="us-west-2", aws_access_key_id=KEY, aws_secret_access_key=SECRET)
+```
+
+### Delete the Redshift Clusters
+
+```Python
+print("3. Deleting Redshift Clusters")
+redshift.delete_cluster( ClusterIdentifier=DWH_CLUSTER_IDENTIFIER,  SkipFinalClusterSnapshot=True)
+
+myClusterProps = redshift.describe_clusters(ClusterIdentifier=DWH_CLUSTER_IDENTIFIER)['Clusters'][0]
+while (myClusterProps['ClusterStatus'] == 'deleting'):
+    print ("Redshift is {}".format(myClusterProps['ClusterStatus']))
+    sleep(60)
+    try:
+        myClusterProps = redshift.describe_clusters(ClusterIdentifier=DWH_CLUSTER_IDENTIFIER)['Clusters'][0]
+    except Exception as e:
+        print(e)
+        break;
+
+print("Redshift is deleted")
+```
+
+### Clean up all the resources
+
+```Python
+print("4. Clean up Resources")
+iam.detach_role_policy(RoleName=DWH_IAM_ROLE_NAME, PolicyArn="arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess")
+iam.delete_role(RoleName=DWH_IAM_ROLE_NAME)
 ```

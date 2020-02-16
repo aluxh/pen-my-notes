@@ -1,21 +1,21 @@
-# Notes from Udacity DEND for PostgreSQL
+# IPython Magic Commands in Juypter notebooks
 
-## Using Jyupter Notebook to run SQL
+The following are notes taken while taking the Course - Data Engineering NanoDegree.
 
-- You can use ipython-sql library. And, load it into the Jyupter notebook using `%load_ext sql`.
-- To execute SQL queries, you write on of the following at the top of your cell.
-        - `%sql`: 
-                - For a one-liner SQL query
-                - You can access a python variable using `$`
-        - `%%SQL`:
-                - For a multi-line SQL query
-                - You can **NOT** access a python variable using `$`
-- Running a connection like: `postgresql://postgres:postgres@db:5432/pagila` to connect to the database.
+## Using IPython Magic commands to run SQL directly in Juypter notebooks
 
-## Creating a database and fill it with data
+- Using `ipython-sql` library, and execute `%load_ext sql` to load the library in Juypter notebook.
+- Using the following style at the top of each code cell to execute SQL queries:
+  - `%sql`: This is for executing one-liner SQL query. And, you can access a python variable using `$`.
+  - `%%sql`: This is for executing multi-line SQL queries. But, you cannot access a python variable using `$`
 
-- Adding `!` at the beginning at the Jyupter cell runs a command in shell. For example, we're not running python code but we are running the `createdb` and `psql` postgresql command-line utilities.
-- An example:
+- Running a connection like: `%sql postgresql://postgres:postgres@db:5432/pagila` to connect to the database.
+
+## Using `!` to run commandline in Juypter notebooks
+
+- Add `!` at the beginning of the Juypter cell to run a commandline in shell. The following examples demonstrate how to run postgresql command-line utilities `createdb` and `psql`.
+
+Note: Postgres version of Pagila database can be found [here](https://github.com/devrimgunduz/pagila)
 
 ```Python
 !PGPASSWORD=student createdb -h 127.0.0.1 -U student pagila
@@ -23,9 +23,11 @@
 !PGPASSWORD=student psql -q -h 127.0.0.1 -U student -d pagila -f Data/pagila-data.sql
 ```
 
-## Connect to a database
+## Some examples of the IPython-magic commands with Juypter notebook and PostgreSQL database
 
-Load the ipython-sql, create the connection variable, then connect to database.
+### Connect to a database
+
+Load the `ipython-sql` library, create the connection variable, then connect to database.
 
 ```Python
 # Load ipython-sql library
@@ -45,7 +47,7 @@ conn_string = "postgresql://{}:{}@{}:{}/{}".format(DB_USER, DB_PASSWORD, DB_ENDP
 %sql $conn_string
 ```
 
-## Retrieve the database schema
+### Retrieve the database schema
 
 ```SQL
 %%sql  
@@ -54,7 +56,7 @@ FROM information_schema.columns
 WHERE table_name = "dimdate';
 ```
 
-## Create FACT table with foreign keys using REFERENCES constraint
+### Create FACT table with foreign keys using REFERENCES constraint
 
 ```SQL
 %%sql
@@ -69,12 +71,12 @@ CREATE TABLE factSales
 );
 ```
 
-## Drop tables that contain foreign keys
+### Drop tables that contain foreign keys
 
-You need to drop the table that has foreign keys references before you can drop other tables.
+You need to drop the **table that has foreign keys references** before you can drop other tables.
 
 ```SQL
-%%sql 
+%%sql
 DROP TABLE IF EXISTS factsales;
 DROP TABLE IF EXISTS dimdate;
 DROP TABLE IF EXISTS dimstore;
@@ -82,7 +84,7 @@ DROP TABLE IF EXISTS dimmovie;
 DROP TABLE IF EXISTS dimcustomer;
 ```
 
-## ETL process from one database (Normalized) to new tables (Star Schema)
+### ETL process from one database (Normalized) to new tables (Star Schema)
 
 An example to extract date data from a `payment_date` table, then transform and load into the `dimDate` table
 
@@ -100,7 +102,7 @@ SELECT DISTINCT(TO_CHAR(payment_date :: DATE, 'yyyyMMDD')::integer)     AS date_
 FROM payment;
 ```
 
-## Check the performance of the script
+### Check the performance of the script
 
 Add `%%time` at the top of the execution block. An example,
 
@@ -114,42 +116,4 @@ JOIN dimDate     ON (dimDate.date_key         = factSales.date_key)
 JOIN dimCustomer ON (dimCustomer.customer_key = factSales.customer_key)
 GROUP BY (dimMovie.title, dimDate.month, dimCustomer.city)
 ORDER BY dimMovie.title, dimDate.month, dimCustomer.city, revenue DESC;
-```
-
-## Using columnar storage extension in PostgreSQL
-
-The extension is cstore_fdw by citus_data: [github link](https://github.com/citusdata/cstore_fdw)
-
-An example:
-
-```SQL
-%%sql
--- load extension first time after install
-CREATE EXTENSION cstore_fdw;
-
--- create server object
-CREATE SERVER cstore_server FOREIGN DATA WRAPPER cstore_fdw;
-
--- create foreign table, i.e. customer reviews column
-DROP FOREIGN TABLE IF EXISTS customer_reviews_col
-------
-CREATE FOREIGN TABLE customer_reviews_col (
-        customer_id TEXT,
-        review_date DATE,
-        review_rating INTEGER,
-        review_votes INTEGER,
-        review_helpful_votes INTEGER,
-        product_id CHAR(10),
-        product_title TEXT,
-        product_sales_rank BIGINT,
-        product_group TEXT,
-        product_category TEXT,
-        product_subcategory TEXT,
-        similar_product_ids CHAR(10)[]
-)
--------------
--- leave code below as is
-SERVER cstore_server
-OPTIONS(compression 'pglz');
-
 ```

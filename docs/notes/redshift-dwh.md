@@ -1,4 +1,6 @@
-# Data Warehouse Topic
+# Notes on Data Warehouse
+
+Notes taken while taking the Udacity Data Engineering Nanodegree.
 
 ## ETL architecture
 
@@ -6,8 +8,7 @@
 
 ## Data Ingestion
 
-- Ingestion at scale using the **COPY** command.
-- Inserting row by row is too slow.
+- Ingestion should be done at scale using the **COPY** command, because inserting row by row is too slow.
 - If the file is huge,
   - Splitting the file into multiple files
   - Ingest in parallel
@@ -19,14 +20,12 @@
 
 ## Using Redshift - Optimizing the table design
 
-Redshift clusters have multiple nodes, so you can optimize the design of the table to ingest your data, to improve the performance.
+Redshift clusters have multiple nodes, so you can optimize the design of the table to ingest your data and improve its performance.
 
-When a table is partitioned up into many pieces and distributed across slices in different machines, this is done blindly.
+When a table is partitioned up into many pieces and distributed across slices in different machines, this is done blindly. If one has an idea about the frequent access pattern of a table, one can choose a cleverer strategy. There are 2 possible strategies:
 
-If one has an idea about the frequent access pattern of a table, one can choose a cleverer strategy. There are 2 possible strategies:
-
-1. Distribution Style
-1. Sorting Key
+- Distribution Style
+- Sorting Key
 
 ### Distribution style
 
