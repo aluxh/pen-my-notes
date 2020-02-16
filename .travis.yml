@@ -16,7 +16,6 @@ deploy:
   cleanup: true
   token: $GITHUB_TOKEN
   local_dir: site
-  keep_history: true
   verbose: true
   on:
     branch: master
