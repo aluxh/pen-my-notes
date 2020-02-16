@@ -1,0 +1,1069 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Using AWS SDK to automate Redshift cluster creation and deletion - Pen my notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#using-aws-sdk-to-automate-redshift-cluster-creation-and-deletion" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Pen my notes" aria-label="Pen my notes" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Pen my notes
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Using AWS SDK to automate Redshift cluster creation and deletion
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Pen my notes
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Notes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../r-shiny-resource/" class="md-tabs__link">
+          R shiny resource
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../woocommerce-setup-notes/woocommerce-notes/" class="md-tabs__link">
+          Woocommerce setup notes
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Pen my notes" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Pen my notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Pen my notes" class="md-nav__link">
+      Pen my notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Notes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Using AWS SDK to automate Redshift cluster creation and deletion
+      </label>
+    
+    <a href="./" title="Using AWS SDK to automate Redshift cluster creation and deletion" class="md-nav__link md-nav__link--active">
+      Using AWS SDK to automate Redshift cluster creation and deletion
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#to-begin" class="md-nav__link">
+    To Begin
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-the-parameters-and-environment" class="md-nav__link">
+    Prepare the parameters and environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-the-parameters-into-script" class="md-nav__link">
+    Load the parameters into script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-the-resources-and-clients-for-ec2-s3-iam-and-redshift" class="md-nav__link">
+    Set up the resources and clients for EC2, S3, IAM and Redshift
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-your-connection-to-s3-bucket-that-store-your-data-sources" class="md-nav__link">
+    Test your connection to s3 bucket that store your data sources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-role-and-attach-policy" class="md-nav__link">
+    Create Role and Attach Policy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-redshift-cluster" class="md-nav__link">
+    Create Redshift Cluster
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-an-incoming-tcp-port-to-access-the-cluster-endpoint" class="md-nav__link">
+    Open an incoming TCP port to access the cluster endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-that-you-can-access-the-cluster" class="md-nav__link">
+    Test that you can access the cluster
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-redshift-cluster" class="md-nav__link">
+    Remove Redshift Cluster
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fetch-parameters" class="md-nav__link">
+    Fetch Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-resources-and-clients" class="md-nav__link">
+    Setup Resources and Clients
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-the-redshift-clusters" class="md-nav__link">
+    Delete the Redshift Clusters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-up-all-the-resources" class="md-nav__link">
+    Clean up all the resources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cassandra/" title="Cassandra" class="md-nav__link">
+      Cassandra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docker-notes/" title="Docker Notes" class="md-nav__link">
+      Docker Notes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../git-notes/" title="Git notes" class="md-nav__link">
+      Git notes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ipython/" title="IPython Magic Commands in Juypter notebooks" class="md-nav__link">
+      IPython Magic Commands in Juypter notebooks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mkdocs-travis-gitpage/" title="Notes about using Mkdocs, Docker, Travis and Github Pages" class="md-nav__link">
+      Notes about using Mkdocs, Docker, Travis and Github Pages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../odbc_w_r/" title="Notes about ODBC drivers, and how to connect via R" class="md-nav__link">
+      Notes about ODBC drivers, and how to connect via R
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../postgres/" title="Notes about PostgreSQL database" class="md-nav__link">
+      Notes about PostgreSQL database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../redshift-dwh/" title="Notes on Data Warehouse" class="md-nav__link">
+      Notes on Data Warehouse
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      R shiny resource
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        R shiny resource
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../r-shiny-resource/" title="R and Shiny Resources List" class="md-nav__link">
+      R and Shiny Resources List
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../r-shiny-resource/r-notes/" title="R notes" class="md-nav__link">
+      R notes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Woocommerce setup notes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Woocommerce setup notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../woocommerce-setup-notes/woocommerce-notes/" title="WooCommerce Setup Notes" class="md-nav__link">
+      WooCommerce Setup Notes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../woocommerce-setup-notes/wordpress-notes/" title="Wordpress Configuration" class="md-nav__link">
+      Wordpress Configuration
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#to-begin" class="md-nav__link">
+    To Begin
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-the-parameters-and-environment" class="md-nav__link">
+    Prepare the parameters and environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-the-parameters-into-script" class="md-nav__link">
+    Load the parameters into script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-the-resources-and-clients-for-ec2-s3-iam-and-redshift" class="md-nav__link">
+    Set up the resources and clients for EC2, S3, IAM and Redshift
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-your-connection-to-s3-bucket-that-store-your-data-sources" class="md-nav__link">
+    Test your connection to s3 bucket that store your data sources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-role-and-attach-policy" class="md-nav__link">
+    Create Role and Attach Policy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-redshift-cluster" class="md-nav__link">
+    Create Redshift Cluster
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-an-incoming-tcp-port-to-access-the-cluster-endpoint" class="md-nav__link">
+    Open an incoming TCP port to access the cluster endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-that-you-can-access-the-cluster" class="md-nav__link">
+    Test that you can access the cluster
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-redshift-cluster" class="md-nav__link">
+    Remove Redshift Cluster
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fetch-parameters" class="md-nav__link">
+    Fetch Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-resources-and-clients" class="md-nav__link">
+    Setup Resources and Clients
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-the-redshift-clusters" class="md-nav__link">
+    Delete the Redshift Clusters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-up-all-the-resources" class="md-nav__link">
+    Clean up all the resources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="using-aws-sdk-to-automate-redshift-cluster-creation-and-deletion">Using AWS SDK to automate Redshift cluster creation and deletion</h1>
+<p>Notes taken from Udacity Data Engineering Nanodegree to automate the creation, and removal of Redshift Cluster. And, also setting up S3 bucket for storing and loading raw data.</p>
+<p>The following is for playing with Redshift database, and at the same time, not spending too much on it. Automating the creation and removal of the Redshift clusters has helped me saved a lot.</p>
+<h2 id="to-begin">To Begin</h2>
+<p>There are few libraries needed - <code>configparser</code> and <code>boto3</code>. I've also used <code>Pandas</code> library in the below example.</p>
+<h3 id="prepare-the-parameters-and-environment">Prepare the parameters and environment</h3>
+<ul>
+<li>Create an external <strong>cfg</strong> file to store all the params, and load into <strong>python</strong> script using <code>configparser</code>. And, the following is how the config file looks like:</li>
+</ul>
+<pre><code class="config">[AWS]
+KEY=key
+SECRET=secret
+
+[DWH]
+DWH_CLUSTER_TYPE=multi-node
+DWH_NUM_NODES=4
+DWH_NODE_TYPE=dc2.large
+
+DWH_IAM_ROLE_NAME=dwhRole
+DWH_CLUSTER_IDENTIFIER=dwhCluster
+DWH_DB=dwh
+DWH_DB_USER=dwhuser
+DWH_DB_PASSWORD=Passw0rd
+DWH_PORT=5439
+</code></pre>
+
+<h3 id="load-the-parameters-into-script">Load the parameters into script</h3>
+<p>The following demonstrate how to load the parameters into the notebook:</p>
+<pre><code class="Python">import configparser
+import pandas as pd
+
+config                  = configparser.ConfigParser()
+config.read_file(open('dwh.cfg'))
+
+KEY                     = config.get('AWS','KEY')
+SECRET                  = config.get('AWS','SECRET')
+
+DWH_CLUSTER_TYPE        = config.get(&quot;DWH&quot;,&quot;DWH_CLUSTER_TYPE&quot;)
+DWH_NUM_NODES           = config.get(&quot;DWH&quot;,&quot;DWH_NUM_NODES&quot;)
+DWH_NODE_TYPE           = config.get(&quot;DWH&quot;,&quot;DWH_NODE_TYPE&quot;)
+
+DWH_CLUSTER_IDENTIFIER  = config.get(&quot;DWH&quot;,&quot;DWH_CLUSTER_IDENTIFIER&quot;)
+DWH_DB                  = config.get(&quot;DWH&quot;,&quot;DWH_DB&quot;)
+DWH_DB_USER             = config.get(&quot;DWH&quot;,&quot;DWH_DB_USER&quot;)
+DWH_DB_PASSWORD         = config.get(&quot;DWH&quot;,&quot;DWH_DB_PASSWORD&quot;)
+DWH_PORT                = config.get(&quot;DWH&quot;,&quot;DWH_PORT&quot;)
+
+DWH_IAM_ROLE_NAME       = config.get(&quot;DWH&quot;, &quot;DWH_IAM_ROLE_NAME&quot;)
+
+(DWH_DB_USER, DWH_DB_PASSWORD, DWH_DB)
+
+pd.DataFrame({&quot;Param&quot;:
+                 [&quot;DWH_CLUSTER_TYPE&quot;, &quot;DWH_NUM_NODES&quot;, &quot;DWH_NODE_TYPE&quot;, &quot;DWH_CLUSTER_IDENTIFIER&quot;, &quot;DWH_DB&quot;, &quot;DWH_DB_USER&quot;, &quot;DWH_DB_PASSWORD&quot;, &quot;DWH_PORT&quot;, &quot;DWH_IAM_ROLE_NAME&quot;],
+                &quot;Value&quot;:
+                 [DWH_CLUSTER_TYPE, DWH_NUM_NODES, DWH_NODE_TYPE, DWH_CLUSTER_IDENTIFIER, DWH_DB, DWH_DB_USER, DWH_DB_PASSWORD, DWH_PORT, DWH_IAM_ROLE_NAME]
+})
+</code></pre>
+
+<h3 id="set-up-the-resources-and-clients-for-ec2-s3-iam-and-redshift">Set up the resources and clients for EC2, S3, IAM and Redshift</h3>
+<p>Using <code>boto3</code> library, create resources and clients in AWS.</p>
+<pre><code class="Python">import boto3
+
+ec2 = boto3.resource('ec2', 
+                region_name='us-west-2',
+                aws_access_key_id=KEY,
+                aws_secret_access_key=SECRET)
+
+s3 = boto3.resource('s3',
+                region_name='us-west-2',
+                aws_access_key_id=KEY,
+                aws_secret_access_key=SECRET)
+
+iam = boto3.client('iam',
+                region_name='us-west-2',
+                aws_access_key_id=KEY,
+                aws_secret_access_key=SECRET)
+
+redshift = boto3.client('redshift',
+                region_name='us-west-2',
+                aws_access_key_id=KEY,
+                aws_secret_access_key=SECRET)
+</code></pre>
+
+<h3 id="test-your-connection-to-s3-bucket-that-store-your-data-sources">Test your connection to s3 bucket that store your data sources</h3>
+<p>Try printing out the data sources from s3 using the following template:</p>
+<pre><code class="python">sampleDbBucket = s3.Bucket(&quot;bucket-name&quot;)
+for obj in sampleDbBucket.objects.filter(Prefix=&quot;some prefix to filter data&quot;):
+        print (obj)
+</code></pre>
+
+<h3 id="create-role-and-attach-policy">Create Role and Attach Policy</h3>
+<p>Creating IAM role to allow AWS Redshift to call AWS services on your behalf.</p>
+<pre><code class="python"># Create Role
+try:
+    print('1.1 Creating a new IAM Role')
+    dwhRole = iam.create_role(
+        Path='/',
+        RoleName=DWH_IAM_ROLE_NAME,
+        Description=&quot;Allows Redshift clusters to call AWS services on your behalf.&quot;,
+        AssumeRolePolicyDocument=json.dumps(
+            {  'Statement': [{'Action': 'sts:AssumeRole',
+               'Effect': 'Allow',
+               'Principal': {'Service': 'redshift.amazonaws.com'}}],
+               'Version': '2012-10-17'}
+        )
+    )
+except Exception as e:
+    print(e)
+
+# Attach Policy
+print('1.2 Attaching Policy')
+iam.attach_role_policy(
+    RoleName=DWH_IAM_ROLE_NAME,
+    PolicyArn=&quot;arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess&quot;
+)['ResponseMetadata']['HTTPStatusCode']
+
+# Get and print the IAM role ARN
+print('1.3 Get the IAM role ARN')
+roleArn = iam.get_role(RoleName=DWH_IAM_ROLE_NAME)['Role']['Arn']
+
+print(roleArn)
+</code></pre>
+
+<h2 id="create-redshift-cluster">Create Redshift Cluster</h2>
+<p>Creating the redshift cluster using the standard template. You can check the script to automate this via <a href="https://github.com/aluxh/carpark-sg-data-pipeline/blob/master/notebooks/create_redshift.py">carpark-sg-data-pipeline</a></p>
+<pre><code class="python">try:
+    response = redshift.create_cluster(
+        #HW
+        ClusterType=DWH_CLUSTER_TYPE,
+        NodeType=DWH_NODE_TYPE,
+        NumberOfNodes=int(DWH_NUM_NODES),
+
+        #Identifiers &amp; Credentials
+        DBName=DWH_DB,
+        ClusterIdentifier=DWH_CLUSTER_IDENTIFIER,
+        MasterUsername=DWH_DB_USER,
+        MasterUserPassword=DWH_DB_PASSWORD,
+
+        #Roles (for s3 access)
+        IamRoles=[roleArn]  
+)
+except Exception as e:
+    print(e)
+</code></pre>
+
+<p>Then, describe the cluster to examine the parameters and its status. Run this block several times until the cluster status becomes <code>Available</code></p>
+<pre><code class="python">def prettyRedshiftProps(props):
+    pd.set_option('display.max_colwidth', -1)
+    keysToShow = [&quot;ClusterIdentifier&quot;, &quot;NodeType&quot;, &quot;ClusterStatus&quot;, &quot;MasterUsername&quot;, &quot;DBName&quot;, &quot;Endpoint&quot;, &quot;NumberOfNodes&quot;, 'VpcId']
+    x = [(k, v) for k,v in props.items() if k in keysToShow]
+    return pd.DataFrame(data=x, columns=[&quot;Key&quot;, &quot;Value&quot;])
+
+myClusterProps = redshift.describe_clusters(ClusterIdentifier=DWH_CLUSTER_IDENTIFIER)['Clusters'][0]
+prettyRedshiftProps(myClusterProps)
+</code></pre>
+
+<p>Print out the cluster endpoint. <strong>Only run this when the cluster is available</strong></p>
+<pre><code class="python">DWH_ENDPOINT = myClusterProps['Endpoint']['Address']
+DWH_ROLE_ARN = myClusterProps['IamRoles'][0]['IamRoleArn']
+print(&quot;DWH_ENDPOINT :: &quot;, DWH_ENDPOINT)
+print(&quot;DWH_ROLE_ARN :: &quot;, roleArn)
+</code></pre>
+
+<h3 id="open-an-incoming-tcp-port-to-access-the-cluster-endpoint">Open an incoming TCP port to access the cluster endpoint</h3>
+<pre><code class="python">try:
+    vpc = ec2.Vpc(id=myClusterProps['VpcId'])
+    defaultSg = list(vpc.security_groups.all())[0]
+    print(defaultSg)
+    defaultSg.authorize_ingress(
+        GroupName=defaultSg.group_name,
+        CidrIp='0.0.0.0/0',
+        IpProtocol='TCP',
+        FromPort=int(DWH_PORT),
+        ToPort=int(DWH_PORT)
+)
+except Exception as e:
+    print(e)
+</code></pre>
+
+<h3 id="test-that-you-can-access-the-cluster">Test that you can access the cluster</h3>
+<pre><code class="sql">%load_ext sql
+
+conn_string=&quot;postgresql://{}:{}@{}:{}/{}&quot;.format(DWH_DB_USER, DWH_DB_PASSWORD, DWH_ENDPOINT, DWH_PORT,DWH_DB)
+print(conn_string)
+%sql $conn_string
+</code></pre>
+
+<h2 id="remove-redshift-cluster">Remove Redshift Cluster</h2>
+<h3 id="fetch-parameters">Fetch Parameters</h3>
+<pre><code class="Python">print(&quot;1. Fetch params&quot;)
+KEY, SECRET = get_config('access.cfg', 'AWS')
+DWH_CLUSTER_TYPE, DWH_NUM_NODES, DWH_NODE_TYPE, DWH_CLUSTER_IDENTIFIER, DWH_DB, DWH_DB_USER, DWH_DB_PASSWORD, DWH_PORT, DWH_IAM_ROLE_NAME = get_config('dwh.cfg', 'DWH')
+</code></pre>
+
+<h3 id="setup-resources-and-clients">Setup Resources and Clients</h3>
+<pre><code class="Python"># Setup resources and clients
+print(&quot;2. Setup Clients&quot;)
+iam = boto3.client('iam',region_name='us-west-2', aws_access_key_id=KEY, aws_secret_access_key=SECRET)
+redshift = boto3.client('redshift', region_name=&quot;us-west-2&quot;, aws_access_key_id=KEY, aws_secret_access_key=SECRET)
+</code></pre>
+
+<h3 id="delete-the-redshift-clusters">Delete the Redshift Clusters</h3>
+<pre><code class="Python">print(&quot;3. Deleting Redshift Clusters&quot;)
+redshift.delete_cluster( ClusterIdentifier=DWH_CLUSTER_IDENTIFIER,  SkipFinalClusterSnapshot=True)
+
+myClusterProps = redshift.describe_clusters(ClusterIdentifier=DWH_CLUSTER_IDENTIFIER)['Clusters'][0]
+while (myClusterProps['ClusterStatus'] == 'deleting'):
+    print (&quot;Redshift is {}&quot;.format(myClusterProps['ClusterStatus']))
+    sleep(60)
+    try:
+        myClusterProps = redshift.describe_clusters(ClusterIdentifier=DWH_CLUSTER_IDENTIFIER)['Clusters'][0]
+    except Exception as e:
+        print(e)
+        break;
+
+print(&quot;Redshift is deleted&quot;)
+</code></pre>
+
+<h3 id="clean-up-all-the-resources">Clean up all the resources</h3>
+<pre><code class="Python">print(&quot;4. Clean up Resources&quot;)
+iam.detach_role_policy(RoleName=DWH_IAM_ROLE_NAME, PolicyArn=&quot;arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess&quot;)
+iam.delete_role(RoleName=DWH_IAM_ROLE_NAME)
+</code></pre>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../.." title="Pen my notes" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Pen my notes
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../cassandra/" title="Cassandra" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Cassandra
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

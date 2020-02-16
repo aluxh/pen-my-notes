@@ -1,0 +1,853 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>IPython Magic Commands in Juypter notebooks - Pen my notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#ipython-magic-commands-in-juypter-notebooks" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Pen my notes" aria-label="Pen my notes" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Pen my notes
+            </span>
+            <span class="md-header-nav__topic">
+              
+                IPython Magic Commands in Juypter notebooks
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Pen my notes
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../aws-sdk/" class="md-tabs__link md-tabs__link--active">
+          Notes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../r-shiny-resource/" class="md-tabs__link">
+          R shiny resource
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../woocommerce-setup-notes/woocommerce-notes/" class="md-tabs__link">
+          Woocommerce setup notes
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Pen my notes" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Pen my notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Pen my notes" class="md-nav__link">
+      Pen my notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Notes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../aws-sdk/" title="Using AWS SDK to automate Redshift cluster creation and deletion" class="md-nav__link">
+      Using AWS SDK to automate Redshift cluster creation and deletion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cassandra/" title="Cassandra" class="md-nav__link">
+      Cassandra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docker-notes/" title="Docker Notes" class="md-nav__link">
+      Docker Notes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../git-notes/" title="Git notes" class="md-nav__link">
+      Git notes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        IPython Magic Commands in Juypter notebooks
+      </label>
+    
+    <a href="./" title="IPython Magic Commands in Juypter notebooks" class="md-nav__link md-nav__link--active">
+      IPython Magic Commands in Juypter notebooks
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-ipython-magic-commands-to-run-sql-directly-in-juypter-notebooks" class="md-nav__link">
+    Using IPython Magic commands to run SQL directly in Juypter notebooks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-to-run-commandline-in-juypter-notebooks" class="md-nav__link">
+    Using ! to run commandline in Juypter notebooks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#some-examples-of-the-ipython-magic-commands-with-juypter-notebook-and-postgresql-database" class="md-nav__link">
+    Some examples of the IPython-magic commands with Juypter notebook and PostgreSQL database
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect-to-a-database" class="md-nav__link">
+    Connect to a database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-the-database-schema" class="md-nav__link">
+    Retrieve the database schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-fact-table-with-foreign-keys-using-references-constraint" class="md-nav__link">
+    Create FACT table with foreign keys using REFERENCES constraint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drop-tables-that-contain-foreign-keys" class="md-nav__link">
+    Drop tables that contain foreign keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etl-process-from-one-database-normalized-to-new-tables-star-schema" class="md-nav__link">
+    ETL process from one database (Normalized) to new tables (Star Schema)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-the-performance-of-the-script" class="md-nav__link">
+    Check the performance of the script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mkdocs-travis-gitpage/" title="Notes about using Mkdocs, Docker, Travis and Github Pages" class="md-nav__link">
+      Notes about using Mkdocs, Docker, Travis and Github Pages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../odbc_w_r/" title="Notes about ODBC drivers, and how to connect via R" class="md-nav__link">
+      Notes about ODBC drivers, and how to connect via R
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../postgres/" title="Notes about PostgreSQL database" class="md-nav__link">
+      Notes about PostgreSQL database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../redshift-dwh/" title="Notes on Data Warehouse" class="md-nav__link">
+      Notes on Data Warehouse
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      R shiny resource
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        R shiny resource
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../r-shiny-resource/" title="R and Shiny Resources List" class="md-nav__link">
+      R and Shiny Resources List
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../r-shiny-resource/r-notes/" title="R notes" class="md-nav__link">
+      R notes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Woocommerce setup notes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Woocommerce setup notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../woocommerce-setup-notes/woocommerce-notes/" title="WooCommerce Setup Notes" class="md-nav__link">
+      WooCommerce Setup Notes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../woocommerce-setup-notes/wordpress-notes/" title="Wordpress Configuration" class="md-nav__link">
+      Wordpress Configuration
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-ipython-magic-commands-to-run-sql-directly-in-juypter-notebooks" class="md-nav__link">
+    Using IPython Magic commands to run SQL directly in Juypter notebooks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-to-run-commandline-in-juypter-notebooks" class="md-nav__link">
+    Using ! to run commandline in Juypter notebooks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#some-examples-of-the-ipython-magic-commands-with-juypter-notebook-and-postgresql-database" class="md-nav__link">
+    Some examples of the IPython-magic commands with Juypter notebook and PostgreSQL database
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect-to-a-database" class="md-nav__link">
+    Connect to a database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-the-database-schema" class="md-nav__link">
+    Retrieve the database schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-fact-table-with-foreign-keys-using-references-constraint" class="md-nav__link">
+    Create FACT table with foreign keys using REFERENCES constraint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drop-tables-that-contain-foreign-keys" class="md-nav__link">
+    Drop tables that contain foreign keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etl-process-from-one-database-normalized-to-new-tables-star-schema" class="md-nav__link">
+    ETL process from one database (Normalized) to new tables (Star Schema)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-the-performance-of-the-script" class="md-nav__link">
+    Check the performance of the script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="ipython-magic-commands-in-juypter-notebooks">IPython Magic Commands in Juypter notebooks</h1>
+<p>The following are notes taken while taking the Course - Data Engineering NanoDegree.</p>
+<h2 id="using-ipython-magic-commands-to-run-sql-directly-in-juypter-notebooks">Using IPython Magic commands to run SQL directly in Juypter notebooks</h2>
+<ul>
+<li>Using <code>ipython-sql</code> library, and execute <code>%load_ext sql</code> to load the library in Juypter notebook.</li>
+<li>Using the following style at the top of each code cell to execute SQL queries:</li>
+<li><code>%sql</code>: This is for executing one-liner SQL query. And, you can access a python variable using <code>$</code>.</li>
+<li>
+<p><code>%%sql</code>: This is for executing multi-line SQL queries. But, you cannot access a python variable using <code>$</code></p>
+</li>
+<li>
+<p>Running a connection like: <code>%sql postgresql://postgres:postgres@db:5432/pagila</code> to connect to the database.</p>
+</li>
+</ul>
+<h2 id="using-to-run-commandline-in-juypter-notebooks">Using <code>!</code> to run commandline in Juypter notebooks</h2>
+<ul>
+<li>Add <code>!</code> at the beginning of the Juypter cell to run a commandline in shell. The following examples demonstrate how to run postgresql command-line utilities <code>createdb</code> and <code>psql</code>.</li>
+</ul>
+<p>Note: Postgres version of Pagila database can be found <a href="https://github.com/devrimgunduz/pagila">here</a></p>
+<pre><code class="Python">!PGPASSWORD=student createdb -h 127.0.0.1 -U student pagila
+!PGPASSWORD=student psql -q -h 127.0.0.1 -U student -d pagila -f Data/pagila-schema.sql
+!PGPASSWORD=student psql -q -h 127.0.0.1 -U student -d pagila -f Data/pagila-data.sql
+</code></pre>
+
+<h2 id="some-examples-of-the-ipython-magic-commands-with-juypter-notebook-and-postgresql-database">Some examples of the IPython-magic commands with Juypter notebook and PostgreSQL database</h2>
+<h3 id="connect-to-a-database">Connect to a database</h3>
+<p>Load the <code>ipython-sql</code> library, create the connection variable, then connect to database.</p>
+<pre><code class="Python"># Load ipython-sql library
+%load_ext sql
+
+# Connect to database
+DB_ENDPOINT = '127.0.0.1'
+DB = 'pagila'  
+DB_USER = 'student'  
+DB_PASSWORD = 'student'  
+DB_PORT = '5432'
+
+# Creating the connection string and keep in python variable:
+conn_string = &quot;postgresql://{}:{}@{}:{}/{}&quot;.format(DB_USER, DB_PASSWORD, DB_ENDPOINT, DB_PORT, DB)
+
+# Using the python variable
+%sql $conn_string
+</code></pre>
+
+<h3 id="retrieve-the-database-schema">Retrieve the database schema</h3>
+<pre><code class="SQL">%%sql  
+SELECT column_name, data_type  
+FROM information_schema.columns  
+WHERE table_name = &quot;dimdate';
+</code></pre>
+
+<h3 id="create-fact-table-with-foreign-keys-using-references-constraint">Create FACT table with foreign keys using REFERENCES constraint</h3>
+<pre><code class="SQL">%%sql
+CREATE TABLE factSales
+(
+    sales_key SERIAL PRIMARY KEY,
+    date_key integer REFERENCES dimdate (date_key),
+    customer_key integer REFERENCES dimcustomer (customer_key),
+    movie_key integer REFERENCES dimmovie (movie_key),
+    store_key integer REFERENCES dimstore(store_key),
+    sales_amount numeric
+);
+</code></pre>
+
+<h3 id="drop-tables-that-contain-foreign-keys">Drop tables that contain foreign keys</h3>
+<p>You need to drop the <strong>table that has foreign keys references</strong> before you can drop other tables.</p>
+<pre><code class="SQL">%%sql
+DROP TABLE IF EXISTS factsales;
+DROP TABLE IF EXISTS dimdate;
+DROP TABLE IF EXISTS dimstore;
+DROP TABLE IF EXISTS dimmovie;
+DROP TABLE IF EXISTS dimcustomer;
+</code></pre>
+
+<h3 id="etl-process-from-one-database-normalized-to-new-tables-star-schema">ETL process from one database (Normalized) to new tables (Star Schema)</h3>
+<p>An example to extract date data from a <code>payment_date</code> table, then transform and load into the <code>dimDate</code> table</p>
+<pre><code class="SQL">%%sql
+INSERT INTO dimDate (date_key, date, year, quarter, month, day, week, is_weekend)
+SELECT DISTINCT(TO_CHAR(payment_date :: DATE, 'yyyyMMDD')::integer)     AS date_key,
+       date(payment_date)                                               AS date,
+       EXTRACT(year FROM payment_date)                                  AS year,
+       EXTRACT(quarter FROM payment_date)                               AS quarter,
+       EXTRACT(month FROM payment_date)                                 AS month,
+       EXTRACT(day FROM payment_date)                                   AS day,
+       EXTRACT(week FROM payment_date)                                  AS week,
+       CASE WHEN EXTRACT(ISODOW FROM payment_date) IN (6, 7) THEN true ELSE false END AS is_weekend
+FROM payment;
+</code></pre>
+
+<h3 id="check-the-performance-of-the-script">Check the performance of the script</h3>
+<p>Add <code>%%time</code> at the top of the execution block. An example,</p>
+<pre><code class="SQL">%%time
+%%sql
+SELECT dimMovie.title, dimDate.month, dimCustomer.city, sum(sales_amount) AS revenue
+FROM factSales
+JOIN dimMovie    ON (dimMovie.movie_key      = factSales.movie_key)
+JOIN dimDate     ON (dimDate.date_key         = factSales.date_key)
+JOIN dimCustomer ON (dimCustomer.customer_key = factSales.customer_key)
+GROUP BY (dimMovie.title, dimDate.month, dimCustomer.city)
+ORDER BY dimMovie.title, dimDate.month, dimCustomer.city, revenue DESC;
+</code></pre>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../git-notes/" title="Git notes" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Git notes
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../mkdocs-travis-gitpage/" title="Notes about using Mkdocs, Docker, Travis and Github Pages" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Notes about using Mkdocs, Docker, Travis and Github Pages
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,885 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Git notes - Pen my notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#git-notes" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Pen my notes" aria-label="Pen my notes" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Pen my notes
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Git notes
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Pen my notes
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../aws-sdk/" class="md-tabs__link md-tabs__link--active">
+          Notes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../r-shiny-resource/" class="md-tabs__link">
+          R shiny resource
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../woocommerce-setup-notes/woocommerce-notes/" class="md-tabs__link">
+          Woocommerce setup notes
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Pen my notes" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Pen my notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Pen my notes" class="md-nav__link">
+      Pen my notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Notes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../aws-sdk/" title="Using AWS SDK to automate Redshift cluster creation and deletion" class="md-nav__link">
+      Using AWS SDK to automate Redshift cluster creation and deletion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cassandra/" title="Cassandra" class="md-nav__link">
+      Cassandra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docker-notes/" title="Docker Notes" class="md-nav__link">
+      Docker Notes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Git notes
+      </label>
+    
+    <a href="./" title="Git notes" class="md-nav__link md-nav__link--active">
+      Git notes
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-git-push-to-an-aws-ec2-remote-using-a-pem-file" class="md-nav__link">
+    How to git push to an AWS EC2 remote using a PEM file
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copy-private-key-to-ssh-folder" class="md-nav__link">
+    Copy private key to .ssh folder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-and-save-public-key" class="md-nav__link">
+    Generate and save public key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-private-key-to-ssh-agent" class="md-nav__link">
+    Add private key to ssh-agent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-deploy-your-project-with-a-git-push-on-your-ec2-instance" class="md-nav__link">
+    How to deploy your project with a git push on your EC2 instance
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#login-to-your-ec2-machine-through-ssh" class="md-nav__link">
+    Login to your EC2 machine through ssh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-a-git-bare-repo" class="md-nav__link">
+    Setup a git bare repo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-directory-where-you-will-deploy-your-project" class="md-nav__link">
+    Create a directory where you will deploy your project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-git-hook" class="md-nav__link">
+    Setup Git Hook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-the-git-remote-after-the-above-are-completed" class="md-nav__link">
+    Setup the git remote after the above are completed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-case-your-push-fails-because-of-permission" class="md-nav__link">
+    In case your push fails because of permission
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ipython/" title="IPython Magic Commands in Juypter notebooks" class="md-nav__link">
+      IPython Magic Commands in Juypter notebooks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mkdocs-travis-gitpage/" title="Notes about using Mkdocs, Docker, Travis and Github Pages" class="md-nav__link">
+      Notes about using Mkdocs, Docker, Travis and Github Pages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../odbc_w_r/" title="Notes about ODBC drivers, and how to connect via R" class="md-nav__link">
+      Notes about ODBC drivers, and how to connect via R
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../postgres/" title="Notes about PostgreSQL database" class="md-nav__link">
+      Notes about PostgreSQL database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../redshift-dwh/" title="Notes on Data Warehouse" class="md-nav__link">
+      Notes on Data Warehouse
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      R shiny resource
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        R shiny resource
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../r-shiny-resource/" title="R and Shiny Resources List" class="md-nav__link">
+      R and Shiny Resources List
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../r-shiny-resource/r-notes/" title="R notes" class="md-nav__link">
+      R notes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Woocommerce setup notes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Woocommerce setup notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../woocommerce-setup-notes/woocommerce-notes/" title="WooCommerce Setup Notes" class="md-nav__link">
+      WooCommerce Setup Notes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../woocommerce-setup-notes/wordpress-notes/" title="Wordpress Configuration" class="md-nav__link">
+      Wordpress Configuration
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-git-push-to-an-aws-ec2-remote-using-a-pem-file" class="md-nav__link">
+    How to git push to an AWS EC2 remote using a PEM file
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copy-private-key-to-ssh-folder" class="md-nav__link">
+    Copy private key to .ssh folder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-and-save-public-key" class="md-nav__link">
+    Generate and save public key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-private-key-to-ssh-agent" class="md-nav__link">
+    Add private key to ssh-agent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-deploy-your-project-with-a-git-push-on-your-ec2-instance" class="md-nav__link">
+    How to deploy your project with a git push on your EC2 instance
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#login-to-your-ec2-machine-through-ssh" class="md-nav__link">
+    Login to your EC2 machine through ssh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-a-git-bare-repo" class="md-nav__link">
+    Setup a git bare repo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-directory-where-you-will-deploy-your-project" class="md-nav__link">
+    Create a directory where you will deploy your project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-git-hook" class="md-nav__link">
+    Setup Git Hook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-the-git-remote-after-the-above-are-completed" class="md-nav__link">
+    Setup the git remote after the above are completed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-case-your-push-fails-because-of-permission" class="md-nav__link">
+    In case your push fails because of permission
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="git-notes">Git notes</h1>
+<ul>
+<li><a href="#How-to-git-push-to-an-AWS-EC2-remote-using-a-PEM-file">How to git push to an AWS EC2 remote using a PEM file</a></li>
+<li><a href="#How-to-deploy-your-project-with-a-git-push-on-your-EC2-instance">How to deploy your project with a git push on your EC2 instance</a></li>
+</ul>
+<h2 id="how-to-git-push-to-an-aws-ec2-remote-using-a-pem-file">How to git push to an AWS EC2 remote using a PEM file</h2>
+<p>I learn the following from <a href="https://alphacoder.xyz/git-push-to-an-aws-ec2-remote-using-a-pem-file/">alphacoder</a></p>
+<p>AWS provides a .pem file when creating EC2 instance. We can use this file to generate SSH keys for accessing the instance without using the PEM file.</p>
+<p>To begin, you should use Git Bash if you are using Windows 10, like I do</p>
+<h3 id="copy-private-key-to-ssh-folder">Copy private key to .ssh folder</h3>
+<pre><code>$ cp /path/to/aws-ec2-instance.pem ~/.ssh/id_rsa_ec2
+</code></pre>
+
+<h3 id="generate-and-save-public-key">Generate and save public key</h3>
+<p>Go to ~/.ssh folder, and run</p>
+<pre><code>$ ssh-keygen -y -f aws-ec2-instance.pem &gt; ~/.ssh/id_rsa_ec2.pub
+</code></pre>
+
+<h3 id="add-private-key-to-ssh-agent">Add private key to ssh-agent</h3>
+<p>Start ssh-agent</p>
+<pre><code>$ eval &quot;$(ssh-agent -s)&quot;
+</code></pre>
+
+<p>Then, add your key to the agent</p>
+<pre><code>$ ssh-add ~/.ssh/id_rsa_ec2
+</code></pre>
+
+<p>After that you can access your instance without the PEM file</p>
+<pre><code>$ ssh ubuntu@ec2-ip-address
+</code></pre>
+
+<h2 id="how-to-deploy-your-project-with-a-git-push-on-your-ec2-instance">How to deploy your project with a git push on your EC2 instance</h2>
+<p>I learn the following from <a href="https://kirankoduru.github.io/git/setup-git-on-your-server.html">kirankoduru.github.io</a></p>
+<p>Using the notes from the website, I can host codes on Github, then deploy the code to server by doing git push to EC2 instance. This makes the deployment fast and simple.</p>
+<p>To begin, you should setup the <a href="#How-to-git-push-to-an-AWS-EC2-remote-using-a-PEM-file">git push to AWS EC2 using PEM file</a></p>
+<h3 id="login-to-your-ec2-machine-through-ssh">Login to your EC2 machine through ssh</h3>
+<pre><code>$ ssh ubuntu@ec2-ip-address
+</code></pre>
+
+<h3 id="setup-a-git-bare-repo">Setup a git bare repo</h3>
+<p>This folder/repo will hold the code when you git push to EC2. For example, I'm creating a <em>test</em> project, and the bare git repo is <strong>test.git</strong>. And, in this example, I'm going to store my project in my home folder: <strong>/home/ubuntu/</strong></p>
+<pre><code>sudo mkdir test.git
+cd test.git
+git init --bare
+</code></pre>
+
+<h3 id="create-a-directory-where-you-will-deploy-your-project">Create a directory where you will deploy your project</h3>
+<p>Go to the <strong>/home/ubuntu/</strong>, and create the project folder</p>
+<pre><code>sudo mkdir test
+</code></pre>
+
+<h3 id="setup-git-hook">Setup Git Hook</h3>
+<p>After the above is done, go to the <strong>test.git</strong> folder, and create a file <strong>post-update</strong> using <strong>post-update.sample</strong>.</p>
+<pre><code>cd test.git
+cd hooks
+mv post-update.sample post-update
+</code></pre>
+
+<p>Then, edit the file</p>
+<pre><code>vim post-update
+</code></pre>
+
+<p>In the file, you should include the following:</p>
+<pre><code>#!/bin/sh
+GIT_WORK_TREE=/home/ubuntu/test/ git checkout -f
+</code></pre>
+
+<h3 id="setup-the-git-remote-after-the-above-are-completed">Setup the git remote after the above are completed</h3>
+<p>Logout from the server, and go to your local git repo for project test, and add a remote</p>
+<pre><code>git remote add production ubuntu@ec2-ip-address:/home/ubuntu/test.git
+</code></pre>
+
+<p>Then, you are all done. You can push master branch to remote production and checkout the /home/ubuntu/test directory for the files.</p>
+<pre><code>git push production master
+</code></pre>
+
+<h3 id="in-case-your-push-fails-because-of-permission">In case your push fails because of permission</h3>
+<pre><code>λ git push production master
+Enumerating objects: 176, done.
+Counting objects: 100% (176/176), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (172/172), done.
+Writing objects: 100% (176/176), 660.67 KiB | 4.00 MiB/s, done.
+Total 176 (delta 89), reused 0 (delta 0)
+error: remote unpack failed: unable to create temporary object directory
+To ec2-ip-address:/home/ubuntu/test.git
+ ! [remote rejected] master -&gt; master (unpacker error)
+error: failed to push some refs to 'ubuntu@ec2-ip-address:/home/ubuntu/test.git'
+</code></pre>
+
+<p>You can go to the folder in EC2 and give permission using <code>chmod</code>. I'm not very good at this yet, so I use <code>777</code> for the folder</p>
+<pre><code>chmod -R 777 test.git
+</code></pre>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../docker-notes/" title="Docker Notes" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Docker Notes
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../ipython/" title="IPython Magic Commands in Juypter notebooks" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                IPython Magic Commands in Juypter notebooks
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
