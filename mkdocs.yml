@@ -1,3 +1,9 @@
-site_name: 'My notes and cheatsheets'
+site_name: 'Pen my notes'
+site-description: 'Notes about my learnings and cheatsheets'
+site-author: 'Alex Ho'
+site-url: 'https://github.com/aluxh/pen-my-notes'
 
-theme: material
+theme: 
+  name: material
+  feature:
+    tabs: true
