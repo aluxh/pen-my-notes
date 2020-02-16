@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>AWS SDK - My notes and cheatsheets</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "AWS SDK";
+    var mkdocs_page_input_path = "notes/aws-sdk.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> My notes and cheatsheets</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Notes</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">AWS SDK</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#aws-sdk">AWS SDK</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#creating-redshift-cluster-using-the-aws-python-sdk">Creating Redshift Cluster using the AWS python SDK</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cassandra/">Cassandra</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../etl/">Data Warehouse Topic</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../postgresql/">Notes from Udacity DEND for PostgreSQL</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">My notes and cheatsheets</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Notes &raquo;</li>
+        
+      
+    
+    <li>AWS SDK</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="aws-sdk">AWS SDK</h1>
+<p>The following is to demonstrate the infrastructure as code.</p>
+<h2 id="creating-redshift-cluster-using-the-aws-python-sdk">Creating Redshift Cluster using the AWS python SDK</h2>
+<p>Few libraries you need are <code>pandas</code>, <code>boto3</code> (AWS SDK), <code>json</code> packages. And, the steps are as follows:</p>
+<h3 id="prepare-the-params-and-environment">Prepare the params and environment</h3>
+<ol>
+<li>
+<p>Using an external <code>cfg</code> file to store all the params, and load into notebook using <code>configparser</code>.</p>
+</li>
+<li>
+<p>How the config file looks like:</p>
+</li>
+</ol>
+<pre><code class="config">[AWS]
+KEY=key
+SECRET=secret
+
+[DWH] 
+DWH_CLUSTER_TYPE=multi-node
+DWH_NUM_NODES=4
+DWH_NODE_TYPE=dc2.large
+
+DWH_IAM_ROLE_NAME=dwhRole
+DWH_CLUSTER_IDENTIFIER=dwhCluster
+DWH_DB=dwh
+DWH_DB_USER=dwhuser
+DWH_DB_PASSWORD=Passw0rd
+DWH_PORT=5439
+</code></pre>
+
+<ul>
+<li>How the python script looks like to load into the notebook:</li>
+</ul>
+<pre><code class="python">import configparser
+config                  = configparser.ConfigParser()
+config.read_file(open('dwh.cfg'))
+
+KEY                     = config.get('AWS','KEY')
+SECRET                  = config.get('AWS','SECRET')
+
+DWH_CLUSTER_TYPE        = config.get(&quot;DWH&quot;,&quot;DWH_CLUSTER_TYPE&quot;)
+DWH_NUM_NODES           = config.get(&quot;DWH&quot;,&quot;DWH_NUM_NODES&quot;)
+DWH_NODE_TYPE           = config.get(&quot;DWH&quot;,&quot;DWH_NODE_TYPE&quot;)
+
+DWH_CLUSTER_IDENTIFIER  = config.get(&quot;DWH&quot;,&quot;DWH_CLUSTER_IDENTIFIER&quot;)
+DWH_DB                  = config.get(&quot;DWH&quot;,&quot;DWH_DB&quot;)
+DWH_DB_USER             = config.get(&quot;DWH&quot;,&quot;DWH_DB_USER&quot;)
+DWH_DB_PASSWORD         = config.get(&quot;DWH&quot;,&quot;DWH_DB_PASSWORD&quot;)
+DWH_PORT                = config.get(&quot;DWH&quot;,&quot;DWH_PORT&quot;)
+
+DWH_IAM_ROLE_NAME       = config.get(&quot;DWH&quot;, &quot;DWH_IAM_ROLE_NAME&quot;)
+
+(DWH_DB_USER, DWH_DB_PASSWORD, DWH_DB)
+
+pd.DataFrame({&quot;Param&quot;:
+                 [&quot;DWH_CLUSTER_TYPE&quot;, &quot;DWH_NUM_NODES&quot;, &quot;DWH_NODE_TYPE&quot;, &quot;DWH_CLUSTER_IDENTIFIER&quot;, &quot;DWH_DB&quot;, &quot;DWH_DB_USER&quot;, &quot;DWH_DB_PASSWORD&quot;, &quot;DWH_PORT&quot;, &quot;DWH_IAM_ROLE_NAME&quot;],
+                &quot;Value&quot;:
+                 [DWH_CLUSTER_TYPE, DWH_NUM_NODES, DWH_NODE_TYPE, DWH_CLUSTER_IDENTIFIER, DWH_DB, DWH_DB_USER, DWH_DB_PASSWORD, DWH_PORT, DWH_IAM_ROLE_NAME]
+})
+</code></pre>
+
+<ol>
+<li>Create the resources and clients for EC2, S3, IAM and Redshift</li>
+</ol>
+<p>Using <code>boto3</code> library, create resources and clients in AWS.</p>
+<pre><code class="python">import boto3
+
+ec2 = boto3.resource('ec2',
+                region_name='us-west-2',
+                aws_access_key_id=KEY,
+                aws_secret_access_key=SECRET)
+
+s3 = boto3.resource('s3',
+                region_name='us-west-2',
+                aws_access_key_id=KEY,
+                aws_secret_access_key=SECRET)
+
+iam = boto3.client('iam',
+                region_name='us-west-2',
+                aws_access_key_id=KEY,
+                aws_secret_access_key=SECRET)
+
+redshift = boto3.client('redshift',
+                region_name='us-west-2',
+                aws_access_key_id=KEY,
+                aws_secret_access_key=SECRET)
+</code></pre>
+
+<ol>
+<li>Try printing out sample data sources from s3 using the following template:</li>
+</ol>
+<pre><code class="python">sampleDbBucket = s3.Bucket(&quot;bucket-name&quot;)
+for obj in sampleDbBucket.objects.filter(Prefix=&quot;some prefix to filter data&quot;):
+        print (obj)
+</code></pre>
+
+<h3 id="create-role-and-attach-policy">Create Role and Attach Policy</h3>
+<p>Creating IAM role to allow AWS Redshift to call AWS services on your behalf.</p>
+<pre><code class="python"># Create Role
+try:
+    print('1.1 Creating a new IAM Role')
+    dwhRole = iam.create_role(
+        Path='/',
+        RoleName=DWH_IAM_ROLE_NAME,
+        Description=&quot;Allows Redshift clusters to call AWS services on your behalf.&quot;,
+        AssumeRolePolicyDocument=json.dumps(
+            {  'Statement': [{'Action': 'sts:AssumeRole',
+               'Effect': 'Allow',
+               'Principal': {'Service': 'redshift.amazonaws.com'}}],
+               'Version': '2012-10-17'}
+        )
+    )
+
+except Exception as e:
+    print(e)
+
+# Attach Policy
+print('1.2 Attaching Policy')
+iam.attach_role_policy(
+    RoleName=DWH_IAM_ROLE_NAME,
+    PolicyArn=&quot;arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess&quot;
+)['ResponseMetadata']['HTTPStatusCode']
+
+# Get and print the IAM role ARN
+print('1.3 Get the IAM role ARN')
+roleArn = iam.get_role(RoleName=DWH_IAM_ROLE_NAME)['Role']['Arn']
+
+print(roleArn)
+</code></pre>
+
+<h3 id="create-redshift-cluster">Create Redshift Cluster</h3>
+<p>Creating the redshift cluster using the standard template. </p>
+<pre><code class="python">try:
+    response = redshift.create_cluster(
+        #HW
+        ClusterType=DWH_CLUSTER_TYPE,
+        NodeType=DWH_NODE_TYPE,
+        NumberOfNodes=int(DWH_NUM_NODES),
+
+        #Identifiers &amp; Credentials
+        DBName=DWH_DB,
+        ClusterIdentifier=DWH_CLUSTER_IDENTIFIER,
+        MasterUsername=DWH_DB_USER,
+        MasterUserPassword=DWH_DB_PASSWORD,
+
+        #Roles (for s3 access)
+        IamRoles=[roleArn]  
+)
+except Exception as e:
+    print(e)
+</code></pre>
+
+<p>Then, describe the cluster to examine the parameters and its status. Run this block several times until the cluster status becomes <code>Available</code></p>
+<pre><code class="python">def prettyRedshiftProps(props):
+    pd.set_option('display.max_colwidth', -1)
+    keysToShow = [&quot;ClusterIdentifier&quot;, &quot;NodeType&quot;, &quot;ClusterStatus&quot;, &quot;MasterUsername&quot;, &quot;DBName&quot;, &quot;Endpoint&quot;, &quot;NumberOfNodes&quot;, 'VpcId']
+    x = [(k, v) for k,v in props.items() if k in keysToShow]
+    return pd.DataFrame(data=x, columns=[&quot;Key&quot;, &quot;Value&quot;])
+
+myClusterProps = redshift.describe_clusters(ClusterIdentifier=DWH_CLUSTER_IDENTIFIER)['Clusters'][0]
+prettyRedshiftProps(myClusterProps)
+</code></pre>
+
+<p>Print out the cluster endpoint. <strong>Only run this when the cluster is available</strong></p>
+<pre><code class="python">DWH_ENDPOINT = myClusterProps['Endpoint']['Address']
+DWH_ROLE_ARN = myClusterProps['IamRoles'][0]['IamRoleArn']
+print(&quot;DWH_ENDPOINT :: &quot;, DWH_ENDPOINT)
+print(&quot;DWH_ROLE_ARN :: &quot;, roleArn)
+</code></pre>
+
+<h3 id="open-an-incoming-tcp-port-to-access-the-cluster-endpoint">Open an incoming TCP port to access the cluster endpoint</h3>
+<pre><code class="python">try:
+    vpc = ec2.Vpc(id=myClusterProps['VpcId'])
+    defaultSg = list(vpc.security_groups.all())[0]
+    print(defaultSg)
+    defaultSg.authorize_ingress(
+        GroupName=defaultSg.group_name,
+        CidrIp='0.0.0.0/0',
+        IpProtocol='TCP',
+        FromPort=int(DWH_PORT),
+        ToPort=int(DWH_PORT)
+    )
+except Exception as e:
+    print(e)
+</code></pre>
+
+<p>Test that you can access the cluster</p>
+<pre><code class="sql">%load_ext sql
+
+conn_string=&quot;postgresql://{}:{}@{}:{}/{}&quot;.format(DWH_DB_USER, DWH_DB_PASSWORD, DWH_ENDPOINT, DWH_PORT,DWH_DB)
+print(conn_string)
+%sql $conn_string
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cassandra/" class="btn btn-neutral float-right" title="Cassandra">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../cassandra/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
