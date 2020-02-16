@@ -1,0 +1,21 @@
+language: python
+
+services:
+  - docker
+
+before_deploy:
+  - docker pull squidfunk/mkdocs-material
+  - git branch gh-pages
+  - mkdir site
+  - docker run -ti -v "$(pwd)":/docs squidfunk/mkdocs-material build --clean
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: site
+  keep_history: true
+  verbose: true
+  on:
+    branch: master
+

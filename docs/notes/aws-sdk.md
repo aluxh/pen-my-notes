@@ -1,6 +1,6 @@
 # AWS SDK
 
-The following is to demonstrate the infrastructure as code.
+The following is to demonstrate the infrastructure as code using AWS SDK.
 
 ## Creating Redshift Cluster using the AWS python SDK
 
