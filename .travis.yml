@@ -8,9 +8,8 @@ before_deploy:
   - docker pull squidfunk/mkdocs-material
   - git branch gh-pages
   - cp README.md docs/index.md
-  - mkdir site
   - docker run -ti -v `pwd`:/docs squidfunk/mkdocs-material build --clean
-  - ls
+  - ls site
 
 deploy:
   provider: pages
