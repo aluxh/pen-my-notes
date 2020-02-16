@@ -1,3 +1,6 @@
+os: linux
+language: python
+
 services:
   - docker
 
@@ -9,8 +12,8 @@ before_deploy:
 
 deploy:
   provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
+  cleanup: true
+  token: $GITHUB_TOKEN
   local_dir: site
   keep_history: true
   verbose: true
