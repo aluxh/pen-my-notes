@@ -10,6 +10,7 @@ before_deploy:
   - cp README.md docs/index.md
   - mkdir site
   - docker run -ti -v `pwd`:/docs squidfunk/mkdocs-material build --clean
+  - ls
 
 deploy:
   provider: pages
