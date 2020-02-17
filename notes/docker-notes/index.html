@@ -365,6 +365,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#using-an-external-file-to-set-environment-variables-to-a-container" class="md-nav__link">
+    Using an external file to set environment variables to a container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#map-a-local-folderdirectory-to-the-container" class="md-nav__link">
     Map a local folder/directory to the container
   </a>
@@ -610,6 +617,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#using-an-external-file-to-set-environment-variables-to-a-container" class="md-nav__link">
+    Using an external file to set environment variables to a container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#map-a-local-folderdirectory-to-the-container" class="md-nav__link">
     Map a local folder/directory to the container
   </a>
@@ -670,11 +684,22 @@
                 
                 
                 <h1 id="docker-notes">Docker Notes</h1>
-<p>Notes taken from reading how to use Docker online. The followings are resources I've read and used:</p>
-<ul>
-<li><a href="#Map-a-local-folder/directory-to-the-container">Map a local folder/directory to the container</a></li>
-<li><a href="#Setting-up-PostgreSQL-on-Windows-10-with-Docker">Setting up PostgreSQL on Windows 10 with Docker</a></li>
-</ul>
+<p>Notes taken from reading how to use Docker online.</p>
+<h2 id="using-an-external-file-to-set-environment-variables-to-a-container">Using an external file to set environment variables to a container</h2>
+<p>Using the <code>env_file</code> configuration option, you can pass multiple environment variables from an external file through to a service's container. It works like <code>docker run --env-file=FILE ...</code>.</p>
+<p>In the <code>docker-compose.yml</code>, do the following setup</p>
+<pre><code class="docker">services:
+    jupyter:
+        ...
+        env_file:
+            - my_variable.env
+</code></pre>
+
+<p>The <code>my_variable.env</code> looks like this:</p>
+<pre><code class="bash">DEBUG=1
+TAG=v1.4
+</code></pre>
+
 <h2 id="map-a-local-folderdirectory-to-the-container">Map a local folder/directory to the container</h2>
 <p>The <code>%cd%</code> refers to the current directory/folder that you are in. And, map that to a directory inside the container. Recommendation is to navigate to the directory, then run the following command on Windows command prompt.</p>
 <p>```command prompt
