@@ -1,9 +1,27 @@
 # Docker Notes
 
-Notes taken from reading how to use Docker online. The followings are resources I've read and used:
+Notes taken from reading how to use Docker online.
 
-* [Map a local folder/directory to the container](#Map-a-local-folder/directory-to-the-container)
-* [Setting up PostgreSQL on Windows 10 with Docker](#Setting-up-PostgreSQL-on-Windows-10-with-Docker)
+## Using an external file to set environment variables to a container
+
+Using the `env_file` configuration option, you can pass multiple environment variables from an external file through to a service's container. It works like `docker run --env-file=FILE ...`.
+
+In the `docker-compose.yml`, do the following setup
+
+```docker
+services:
+    jupyter:
+        ...
+        env_file:
+            - my_variable.env
+```
+
+The `my_variable.env` looks like this:
+
+```bash
+DEBUG=1
+TAG=v1.4
+```
 
 ## Map a local folder/directory to the container
 
