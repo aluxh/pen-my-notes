@@ -1,7 +1,9 @@
 site_name: 'Pen my notes'
-site-description: 'Notes about my learnings and cheatsheets'
-site-author: 'Alex Ho'
-site-url: 'https://github.com/aluxh/pen-my-notes'
+site_description: 'Notes about my learnings and cheatsheets'
+site_author: 'Alex Ho'
+site_url: 'https://aluxh.github.io/pen-my-notes/'
+repo_name: 'GitHub'
+repo_url: 'https://github.com/aluxh/pen-my-notes'
 
 theme: 
   name: material
