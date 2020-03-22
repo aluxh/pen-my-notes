@@ -13,7 +13,7 @@
         <meta name="description" content="Notes about my learnings and cheatsheets">
       
       
-        <link rel="canonical" href="https://aluxh.github.io/pen-my-notes/notes/earn-money-ml/">
+        <link rel="canonical" href="https://aluxh.github.io/pen-my-notes/nlp/preprocessing-using-qdap-tm-packages/">
       
       
         <meta name="author" content="Alex Ho">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Ideas for making money with Machine Learning, Data Science and AI - Pen my notes</title>
+        <title>Cheatsheet about pre-processing text using qdap and tm packages - Pen my notes</title>
       
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#ideas-for-making-money-with-machine-learning-data-science-and-ai" tabindex="0" class="md-skip">
+      <a href="#cheatsheet-about-pre-processing-text-using-qdap-and-tm-packages" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -109,7 +109,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Ideas for making money with Machine Learning, Data Science and AI
+                Cheatsheet about pre-processing text using qdap and tm packages
               
             </span>
           
@@ -198,7 +198,20 @@
   
     <li class="md-tabs__item">
       
-        <a href="../aws-sdk/" class="md-tabs__link md-tabs__link--active">
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Nlp
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../notes/aws-sdk/" class="md-tabs__link">
           Notes
         </a>
       
@@ -213,6 +226,19 @@
       
         <a href="../../r-shiny-resource/" class="md-tabs__link">
           R shiny resource
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../thoughts-ideas/earn-money-ml/" class="md-tabs__link">
+          Thoughts ideas
         </a>
       
     </li>
@@ -299,50 +325,14 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
-      Notes
+      Nlp
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
-        Notes
+        Nlp
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../aws-sdk/" title="Using AWS SDK to automate Redshift cluster creation and deletion" class="md-nav__link">
-      Using AWS SDK to automate Redshift cluster creation and deletion
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../cassandra/" title="Cassandra" class="md-nav__link">
-      Cassandra
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../docker-notes/" title="Docker Notes" class="md-nav__link">
-      Docker Notes
-    </a>
-  </li>
-
         
           
           
@@ -359,11 +349,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Ideas for making money with Machine Learning, Data Science and AI
+        Cheatsheet about pre-processing text using qdap and tm packages
       </label>
     
-    <a href="./" title="Ideas for making money with Machine Learning, Data Science and AI" class="md-nav__link md-nav__link--active">
-      Ideas for making money with Machine Learning, Data Science and AI
+    <a href="./" title="Cheatsheet about pre-processing text using qdap and tm packages" class="md-nav__link md-nav__link--active">
+      Cheatsheet about pre-processing text using qdap and tm packages
     </a>
     
       
@@ -377,30 +367,70 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#start-up" class="md-nav__link">
-    Start-up
+  <a href="#useful-functions-for-cleaning-the-text" class="md-nav__link">
+    Useful functions for cleaning the text
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#freelancecontract-work" class="md-nav__link">
-    Freelance/Contract Work
+  <a href="#stopwords" class="md-nav__link">
+    Stopwords
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-sub-projects" class="md-nav__link">
-    Build Sub-Projects
+  <a href="#word-stemming" class="md-nav__link">
+    Word stemming
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#compete-in-competitions" class="md-nav__link">
-    Compete in Competitions
+  <a href="#pre-processing-workflow" class="md-nav__link">
+    Pre-processing workflow
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learnings-for-tm-package" class="md-nav__link">
+    Learnings for tm package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learnings-for-qdap-package" class="md-nav__link">
+    Learnings for qdap package
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terms-frequency" class="md-nav__link">
+    Terms Frequency
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frequent-terms-with-qdap-library" class="md-nav__link">
+    Frequent Terms with qdap library
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -412,78 +442,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../git-notes/" title="Git notes" class="md-nav__link">
-      Git notes
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ipython/" title="IPython Magic Commands in Juypter notebooks" class="md-nav__link">
-      IPython Magic Commands in Juypter notebooks
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../mkdocs-travis-gitpage/" title="Notes about using Mkdocs, Docker, Travis and Github Pages" class="md-nav__link">
-      Notes about using Mkdocs, Docker, Travis and Github Pages
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../odbc_w_r/" title="Notes about ODBC drivers, and how to connect via R" class="md-nav__link">
-      Notes about ODBC drivers, and how to connect via R
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../postgres/" title="Notes about PostgreSQL database" class="md-nav__link">
-      Notes about PostgreSQL database
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../redshift-dwh/" title="Notes on Data Warehouse" class="md-nav__link">
-      Notes on Data Warehouse
-    </a>
   </li>
 
         
@@ -502,10 +460,142 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      R shiny resource
+      Notes
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
+        Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../notes/aws-sdk/" title="Using AWS SDK to automate Redshift cluster creation and deletion" class="md-nav__link">
+      Using AWS SDK to automate Redshift cluster creation and deletion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../notes/cassandra/" title="Cassandra" class="md-nav__link">
+      Cassandra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../notes/docker-notes/" title="Docker Notes" class="md-nav__link">
+      Docker Notes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../notes/git-notes/" title="Git notes" class="md-nav__link">
+      Git notes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../notes/ipython/" title="IPython Magic Commands in Juypter notebooks" class="md-nav__link">
+      IPython Magic Commands in Juypter notebooks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../notes/mkdocs-travis-gitpage/" title="Notes about using Mkdocs, Docker, Travis and Github Pages" class="md-nav__link">
+      Notes about using Mkdocs, Docker, Travis and Github Pages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../notes/odbc_w_r/" title="Notes about ODBC drivers, and how to connect via R" class="md-nav__link">
+      Notes about ODBC drivers, and how to connect via R
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../notes/postgres/" title="Notes about PostgreSQL database" class="md-nav__link">
+      Notes about PostgreSQL database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../notes/redshift-dwh/" title="Notes on Data Warehouse" class="md-nav__link">
+      Notes on Data Warehouse
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      R shiny resource
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
         R shiny resource
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -547,13 +637,49 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-5">
+      Thoughts ideas
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Thoughts ideas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../thoughts-ideas/earn-money-ml/" title="Ideas for making money with Machine Learning, Data Science and AI" class="md-nav__link">
+      Ideas for making money with Machine Learning, Data Science and AI
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
       Woocommerce setup notes
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-6">
         Woocommerce setup notes
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -609,30 +735,70 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#start-up" class="md-nav__link">
-    Start-up
+  <a href="#useful-functions-for-cleaning-the-text" class="md-nav__link">
+    Useful functions for cleaning the text
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#freelancecontract-work" class="md-nav__link">
-    Freelance/Contract Work
+  <a href="#stopwords" class="md-nav__link">
+    Stopwords
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-sub-projects" class="md-nav__link">
-    Build Sub-Projects
+  <a href="#word-stemming" class="md-nav__link">
+    Word stemming
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#compete-in-competitions" class="md-nav__link">
-    Compete in Competitions
+  <a href="#pre-processing-workflow" class="md-nav__link">
+    Pre-processing workflow
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learnings-for-tm-package" class="md-nav__link">
+    Learnings for tm package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learnings-for-qdap-package" class="md-nav__link">
+    Learnings for qdap package
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terms-frequency" class="md-nav__link">
+    Terms Frequency
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frequent-terms-with-qdap-library" class="md-nav__link">
+    Frequent Terms with qdap library
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -652,49 +818,81 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/aluxh/pen-my-notes/edit/master/docs/notes/earn-money-ml.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/aluxh/pen-my-notes/edit/master/docs/nlp/preprocessing-using-qdap-tm-packages.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="ideas-for-making-money-with-machine-learning-data-science-and-ai">Ideas for making money with Machine Learning, Data Science and AI</h1>
-<p>These are ideas and inspiration taken from people sharing online, articles read and etc.</p>
-<h2 id="start-up">Start-up</h2>
+                <h1 id="cheatsheet-about-pre-processing-text-using-qdap-and-tm-packages">Cheatsheet about pre-processing text using qdap and tm packages</h1>
+<h2 id="useful-functions-for-cleaning-the-text">Useful functions for cleaning the text</h2>
+<p><strong>qdap</strong> package offers some text cleaning functions, which I find them useful.</p>
 <ul>
-<li>Focus on vertical and niche solutions. And, make sure you perform well in that "category".</li>
-<li>Create Dataset that you could find, build API and sell access to them.</li>
-<li>Leverage on your domain knowledge, build data products for them.</li>
+<li>bracketX(): Remove all text within brackets (e.g. "It's (so) cool" becomes "It's cool")</li>
+<li>replace_number(): Replace numbers with their word equivalents (e.g. "2" becomes "two")</li>
+<li>replace_abbreviation(): Replace abbreviations with their full text equivalents (e.g. "Sr" becomes "Senior")</li>
+<li>replace_contraction(): Convert contractions back to their base words (e.g. "shouldn't" becomes "should not")</li>
+<li>replace_symbol() Replace common symbols with their word equivalents (e.g. "$" becomes "dollar")</li>
 </ul>
-<p>Some of my favourite companies are: <a href="https://narrativescience.com/">Narrative Science</a>, <a href="https://monkeylearn.com/">MonkeyLearn</a>.</p>
-<p>Some problems I'm interested in:</p>
+<p><strong>tm</strong> package offers other useful preprocessing functions:</p>
 <ul>
-<li>Helping small businesses (really small ones) to survive</li>
-<li>Digitalize</li>
-<li>Build Awareness &amp; Outreach</li>
-<li>How to better spend their funds (since earning them is so difficult)</li>
-<li>How to improve their productivity</li>
-<li>Poverty</li>
-<li>Natural Language Processing-related</li>
+<li>removePunctuation(): Remove all punctuation marks</li>
+<li>removeNumbers(): Remove numbers</li>
+<li>stripWhitespace(): Remove excess whitespace</li>
 </ul>
-<p><strong>Note to self:</strong> Think of a problem, consider the problems in Consumer or Enterprise Market.</p>
-<h2 id="freelancecontract-work">Freelance/Contract Work</h2>
-<p>Building personal brand is important for freelancing. To demonstrate your abilities, as well as knowledge.</p>
-<ul>
-<li>Writing a technical blog (turning into a book - self-publishing)</li>
-<li>Recurring revenue (passive income - write once, sell many times)</li>
-</ul>
-<h2 id="build-sub-projects">Build Sub-Projects</h2>
-<ul>
-<li>Projects that help you earn money, as well as becoming a blog for writing</li>
-<li>Automated trading bot for trading</li>
-<li>Building analytics tools for Wordpress/WooCommerce.</li>
-<li>Building recommender system tool for Wordpress/WooCommerce.</li>
-<li>Building machine translation tool for Wordpress.</li>
-</ul>
-<h2 id="compete-in-competitions">Compete in Competitions</h2>
-<ul>
-<li>Kaggle</li>
-<li>Numerai</li>
-<li>Hackathons (KDNuggets)</li>
-</ul>
+<h2 id="stopwords">Stopwords</h2>
+<p>To list the standard English stop words from <strong>tm</strong> package</p>
+<pre><code class="r">stopwords('en')
+</code></pre>
+
+<p>And, if you wish to expand or customize the stopword list:</p>
+<pre><code class="r">customized_stopwords &lt;- c(&quot;word1&quot;, &quot;word2&quot;, stopwords(&quot;en&quot;))
+</code></pre>
+
+<p>Then use <code>removeWords()</code> function to remove the stopwords</p>
+<pre><code class="r"># Remove stop words from text
+removeWords(text, new_stops)
+</code></pre>
+
+<h2 id="word-stemming">Word stemming</h2>
+<p>Word stemming and stem completion. For example,</p>
+<pre><code class="r">stemDocument(c(&quot;computational&quot;, &quot;computers&quot;, &quot;computation&quot;))
+#returns &quot;comput&quot; &quot;comput&quot; &quot;comput&quot;.
+</code></pre>
+
+<p>Use <code>stemCompletion()</code> to reconstruct these word roots back into a known term. <code>stemCompletion()</code> accepts a character vector and a completion dictionary.</p>
+<h2 id="pre-processing-workflow">Pre-processing workflow</h2>
+<h3 id="learnings-for-tm-package">Learnings for tm package</h3>
+<pre><code class="r">clean_corpus &lt;- function(corpus){
+  corpus &lt;- tm_map(corpus, removePunctuation)
+  corpus &lt;- tm_map(corpus, stripWhitespace)
+  corpus &lt;- tm_map(corpus, removeNumbers)
+  corpus &lt;- tm_map(corpus, content_transformer(tolower))
+  corpus &lt;- tm_map(corpus, removeWords, c(stopwords(&quot;en&quot;), &quot;amp&quot;, &quot;glass&quot;, &quot;chardonnay&quot;, &quot;coffee&quot;))
+  return(corpus)
+}
+</code></pre>
+
+<h3 id="learnings-for-qdap-package">Learnings for qdap package</h3>
+<pre><code class="r">Cleaning Data using QDAP:
+qdap_clean &lt;- function(x){
+  x &lt;- replace_abbreviation(x)
+  x &lt;- replace_contraction(x)
+  x &lt;- replace_number(x)
+  x &lt;- replace_ordinal(x)
+  x &lt;- replace_ordinal(x)
+  x &lt;- replace_symbol(x)
+  x &lt;- tolower(x)
+  return(x)
+}
+</code></pre>
+
+<h2 id="terms-frequency">Terms Frequency</h2>
+<p>Using term-document matrix in the TM library, as well as its transpose, the document-term matrix, we will use it as the basis for some analysis. In order to analyze it we need to change it to a simple matrix like we did in chapter 1 using <code>as.matrix()</code>.</p>
+<p>Calling <code>rowSums()</code> on your newly made matrix aggregates all the terms used in a passage. Once you have the rowSums(), you can sort() them with decreasing = TRUE, so you can focus on the most common terms.</p>
+<p>Lastly, you can make a <code>barplot()</code> of the top 5 terms of term_frequency with the following code.</p>
+<pre><code class="r">barplot(term_frequency[1:5], col = &quot;#C0DE25&quot;)
+</code></pre>
+
+<h3 id="frequent-terms-with-qdap-library">Frequent Terms with qdap library</h3>
+<p>If you are OK giving up some control over the exact preprocessing steps, then a fast way to get frequent terms is with <code>freq_terms()</code> from qdap.</p>
                 
                   
                 
@@ -716,7 +914,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../docker-notes/" title="Docker Notes" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../.." title="Pen my notes" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -725,19 +923,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Docker Notes
+                Pen my notes
               </span>
             </div>
           </a>
         
         
-          <a href="../git-notes/" title="Git notes" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../notes/aws-sdk/" title="Using AWS SDK to automate Redshift cluster creation and deletion" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Git notes
+                Using AWS SDK to automate Redshift cluster creation and deletion
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
