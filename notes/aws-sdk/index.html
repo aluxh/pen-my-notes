@@ -832,8 +832,9 @@
                 
                 
                 <h1 id="using-aws-sdk-to-automate-redshift-cluster-creation-and-deletion">Using AWS SDK to automate Redshift cluster creation and deletion</h1>
-<p>Notes taken from Udacity Data Engineering Nanodegree to automate the creation, and removal of Redshift Cluster. And, also setting up S3 bucket for storing and loading raw data.</p>
-<p>The following is for playing with Redshift database, and at the same time, not spending too much on it. Automating the creation and removal of the Redshift clusters has helped me saved a lot.</p>
+<p>Learnings from the <a href="https://www.udacity.com/course/data-engineer-nanodegree--nd027">Udacity Data Engineering Nanodegree</a>. </p>
+<p>I modified scripts given to us to automate the creation and removal of Redshift Cluster. And, also setting up S3 bucket for storing and loading raw data.</p>
+<p>The following is meant for testing out Redshift database, while controlling cost. Automating the creation and removal of redshift clusters has helped me to saved a lot.</p>
 <h2 id="to-begin">To Begin</h2>
 <p>There are few libraries needed - <code>configparser</code> and <code>boto3</code>. I've also used <code>Pandas</code> library in the below example.</p>
 <h3 id="prepare-the-parameters-and-environment">Prepare the parameters and environment</h3>
