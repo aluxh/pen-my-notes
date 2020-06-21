@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://aluxh.github.io/pen-my-notes/</loc>
-     <lastmod>2020-05-16</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://aluxh.github.io/pen-my-notes/nlp/preprocessing-using-qdap-tm-packages/</loc>
-     <lastmod>2020-05-16</lastmod>
+     <loc>https://aluxh.github.io/pen-my-notes/MISC/docker-notes/</loc>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://aluxh.github.io/pen-my-notes/notes/aws-sdk/</loc>
-     <lastmod>2020-05-16</lastmod>
+     <loc>https://aluxh.github.io/pen-my-notes/MISC/git-notes/</loc>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://aluxh.github.io/pen-my-notes/notes/cassandra/</loc>
-     <lastmod>2020-05-16</lastmod>
+     <loc>https://aluxh.github.io/pen-my-notes/MISC/ipython/</loc>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://aluxh.github.io/pen-my-notes/notes/docker-notes/</loc>
-     <lastmod>2020-05-16</lastmod>
+     <loc>https://aluxh.github.io/pen-my-notes/R-and-shiny/r-notes/</loc>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://aluxh.github.io/pen-my-notes/notes/git-notes/</loc>
-     <lastmod>2020-05-16</lastmod>
+     <loc>https://aluxh.github.io/pen-my-notes/data-engineering/aws-sdk/</loc>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://aluxh.github.io/pen-my-notes/notes/ipython/</loc>
-     <lastmod>2020-05-16</lastmod>
+     <loc>https://aluxh.github.io/pen-my-notes/data-engineering/cassandra/</loc>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://aluxh.github.io/pen-my-notes/notes/mkdocs-travis-gitpage/</loc>
-     <lastmod>2020-05-16</lastmod>
+     <loc>https://aluxh.github.io/pen-my-notes/data-engineering/odbc_w_r/</loc>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://aluxh.github.io/pen-my-notes/notes/odbc_w_r/</loc>
-     <lastmod>2020-05-16</lastmod>
+     <loc>https://aluxh.github.io/pen-my-notes/data-engineering/postgres/</loc>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://aluxh.github.io/pen-my-notes/notes/postgres/</loc>
-     <lastmod>2020-05-16</lastmod>
+     <loc>https://aluxh.github.io/pen-my-notes/data-engineering/redshift-dwh/</loc>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://aluxh.github.io/pen-my-notes/notes/redshift-dwh/</loc>
-     <lastmod>2020-05-16</lastmod>
+     <loc>https://aluxh.github.io/pen-my-notes/learning-CI-CD/mkdocs-travis-gitpage/</loc>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://aluxh.github.io/pen-my-notes/r-shiny-resource/</loc>
-     <lastmod>2020-05-16</lastmod>
+     <loc>https://aluxh.github.io/pen-my-notes/text-mining/preprocessing-using-qdap-tm-packages/</loc>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://aluxh.github.io/pen-my-notes/r-shiny-resource/r-notes/</loc>
-     <lastmod>2020-05-16</lastmod>
+     <loc>https://aluxh.github.io/pen-my-notes/time-series/forecast/</loc>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://aluxh.github.io/pen-my-notes/woocommerce-setup-notes/woocommerce-notes/</loc>
-     <lastmod>2020-05-16</lastmod>
+     <loc>https://aluxh.github.io/pen-my-notes/time-series/white-noise/</loc>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://aluxh.github.io/pen-my-notes/woocommerce-setup-notes/wordpress-notes/</loc>
-     <lastmod>2020-05-16</lastmod>
+     <loc>https://aluxh.github.io/pen-my-notes/woocommerce-wordpress/woocommerce-config/</loc>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

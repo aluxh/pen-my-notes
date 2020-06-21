@@ -11,21 +11,21 @@
         <meta name="description" content="Notes about my learnings and cheatsheets">
       
       
-        <link rel="canonical" href="https://aluxh.github.io/pen-my-notes/">
+        <link rel="canonical" href="https://aluxh.github.io/pen-my-notes/MISC/git-notes/">
       
       
         <meta name="author" content="Alex Ho">
       
-      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.1">
     
     
       
-        <title>Pen my notes</title>
+        <title>Git notes - Pen my notes</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.fe0cca5b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
       
       
     
@@ -55,7 +55,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pen-my-notes" class="md-skip">
+        <a href="#git-notes" class="md-skip">
           Skip to content
         </a>
       
@@ -77,8 +77,15 @@
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
       
-        <div class="md-header-nav__ellipsis md-ellipsis">
-          Pen my notes
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Pen my notes
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Git notes
+            
+          </span>
         </div>
       
     </div>
@@ -174,20 +181,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="." title="Pen my notes" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../.." title="Pen my notes" class="md-nav__link">
       Pen my notes
     </a>
-    
   </li>
 
     
@@ -195,10 +193,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       MISC
@@ -222,7 +222,7 @@
 
 
   <li class="md-nav__item">
-    <a href="MISC/docker-notes/" title="Docker Notes" class="md-nav__link">
+    <a href="../docker-notes/" title="Docker Notes" class="md-nav__link">
       Docker Notes
     </a>
   </li>
@@ -232,11 +232,135 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="MISC/git-notes/" title="Git notes" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Git notes
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Git notes" class="md-nav__link md-nav__link--active">
       Git notes
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-git-push-to-an-aws-ec2-remote-using-a-pem-file" class="md-nav__link">
+    How to git push to an AWS EC2 remote using a PEM file
+  </a>
+  
+    <nav class="md-nav" aria-label="How to git push to an AWS EC2 remote using a PEM file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copy-private-key-to-ssh-folder" class="md-nav__link">
+    Copy private key to .ssh folder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-and-save-public-key" class="md-nav__link">
+    Generate and save public key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-private-key-to-ssh-agent" class="md-nav__link">
+    Add private key to ssh-agent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-deploy-your-project-with-a-git-push-on-your-ec2-instance" class="md-nav__link">
+    How to deploy your project with a git push on your EC2 instance
+  </a>
+  
+    <nav class="md-nav" aria-label="How to deploy your project with a git push on your EC2 instance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#login-to-your-ec2-machine-through-ssh" class="md-nav__link">
+    Login to your EC2 machine through ssh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-a-git-bare-repo" class="md-nav__link">
+    Setup a git bare repo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-directory-where-you-will-deploy-your-project" class="md-nav__link">
+    Create a directory where you will deploy your project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-git-hook" class="md-nav__link">
+    Setup Git Hook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-the-git-remote-after-the-above-are-completed" class="md-nav__link">
+    Setup the git remote after the above are completed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-case-your-push-fails-because-of-permission" class="md-nav__link">
+    In case your push fails because of permission
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -246,7 +370,7 @@
 
 
   <li class="md-nav__item">
-    <a href="MISC/ipython/" title="IPython Magic Commands in Juypter notebooks" class="md-nav__link">
+    <a href="../ipython/" title="IPython Magic Commands in Juypter notebooks" class="md-nav__link">
       IPython Magic Commands in Juypter notebooks
     </a>
   </li>
@@ -288,7 +412,7 @@
 
 
   <li class="md-nav__item">
-    <a href="R-and-shiny/r-notes/" title="R notes" class="md-nav__link">
+    <a href="../../R-and-shiny/r-notes/" title="R notes" class="md-nav__link">
       R notes
     </a>
   </li>
@@ -330,7 +454,7 @@
 
 
   <li class="md-nav__item">
-    <a href="data-engineering/aws-sdk/" title="Using AWS SDK to automate Redshift cluster creation and deletion" class="md-nav__link">
+    <a href="../../data-engineering/aws-sdk/" title="Using AWS SDK to automate Redshift cluster creation and deletion" class="md-nav__link">
       Using AWS SDK to automate Redshift cluster creation and deletion
     </a>
   </li>
@@ -342,7 +466,7 @@
 
 
   <li class="md-nav__item">
-    <a href="data-engineering/cassandra/" title="Cassandra" class="md-nav__link">
+    <a href="../../data-engineering/cassandra/" title="Cassandra" class="md-nav__link">
       Cassandra
     </a>
   </li>
@@ -354,7 +478,7 @@
 
 
   <li class="md-nav__item">
-    <a href="data-engineering/odbc_w_r/" title="Notes about ODBC drivers, and how to connect via R" class="md-nav__link">
+    <a href="../../data-engineering/odbc_w_r/" title="Notes about ODBC drivers, and how to connect via R" class="md-nav__link">
       Notes about ODBC drivers, and how to connect via R
     </a>
   </li>
@@ -366,7 +490,7 @@
 
 
   <li class="md-nav__item">
-    <a href="data-engineering/postgres/" title="Notes about PostgreSQL database" class="md-nav__link">
+    <a href="../../data-engineering/postgres/" title="Notes about PostgreSQL database" class="md-nav__link">
       Notes about PostgreSQL database
     </a>
   </li>
@@ -378,7 +502,7 @@
 
 
   <li class="md-nav__item">
-    <a href="data-engineering/redshift-dwh/" title="Notes on Data Warehouse" class="md-nav__link">
+    <a href="../../data-engineering/redshift-dwh/" title="Notes on Data Warehouse" class="md-nav__link">
       Notes on Data Warehouse
     </a>
   </li>
@@ -420,7 +544,7 @@
 
 
   <li class="md-nav__item">
-    <a href="learning-CI-CD/mkdocs-travis-gitpage/" title="Notes about using Mkdocs, Docker, Travis and Github Pages" class="md-nav__link">
+    <a href="../../learning-CI-CD/mkdocs-travis-gitpage/" title="Notes about using Mkdocs, Docker, Travis and Github Pages" class="md-nav__link">
       Notes about using Mkdocs, Docker, Travis and Github Pages
     </a>
   </li>
@@ -462,7 +586,7 @@
 
 
   <li class="md-nav__item">
-    <a href="text-mining/preprocessing-using-qdap-tm-packages/" title="Cheatsheet about pre-processing text using qdap and tm packages" class="md-nav__link">
+    <a href="../../text-mining/preprocessing-using-qdap-tm-packages/" title="Cheatsheet about pre-processing text using qdap and tm packages" class="md-nav__link">
       Cheatsheet about pre-processing text using qdap and tm packages
     </a>
   </li>
@@ -504,7 +628,7 @@
 
 
   <li class="md-nav__item">
-    <a href="time-series/forecast/" title="Forecast using R package" class="md-nav__link">
+    <a href="../../time-series/forecast/" title="Forecast using R package" class="md-nav__link">
       Forecast using R package
     </a>
   </li>
@@ -516,7 +640,7 @@
 
 
   <li class="md-nav__item">
-    <a href="time-series/white-noise/" title="White Noise" class="md-nav__link">
+    <a href="../../time-series/white-noise/" title="White Noise" class="md-nav__link">
       White Noise
     </a>
   </li>
@@ -558,7 +682,7 @@
 
 
   <li class="md-nav__item">
-    <a href="woocommerce-wordpress/woocommerce-config/" title="WooCommerce Setup Notes" class="md-nav__link">
+    <a href="../../woocommerce-wordpress/woocommerce-config/" title="WooCommerce Setup Notes" class="md-nav__link">
       WooCommerce Setup Notes
     </a>
   </li>
@@ -586,6 +710,105 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-git-push-to-an-aws-ec2-remote-using-a-pem-file" class="md-nav__link">
+    How to git push to an AWS EC2 remote using a PEM file
+  </a>
+  
+    <nav class="md-nav" aria-label="How to git push to an AWS EC2 remote using a PEM file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copy-private-key-to-ssh-folder" class="md-nav__link">
+    Copy private key to .ssh folder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-and-save-public-key" class="md-nav__link">
+    Generate and save public key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-private-key-to-ssh-agent" class="md-nav__link">
+    Add private key to ssh-agent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-deploy-your-project-with-a-git-push-on-your-ec2-instance" class="md-nav__link">
+    How to deploy your project with a git push on your EC2 instance
+  </a>
+  
+    <nav class="md-nav" aria-label="How to deploy your project with a git push on your EC2 instance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#login-to-your-ec2-machine-through-ssh" class="md-nav__link">
+    Login to your EC2 machine through ssh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-a-git-bare-repo" class="md-nav__link">
+    Setup a git bare repo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-directory-where-you-will-deploy-your-project" class="md-nav__link">
+    Create a directory where you will deploy your project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-git-hook" class="md-nav__link">
+    Setup Git Hook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-the-git-remote-after-the-above-are-completed" class="md-nav__link">
+    Setup the git remote after the above are completed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-case-your-push-fails-because-of-permission" class="md-nav__link">
+    In case your push fails because of permission
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -596,7 +819,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/aluxh/pen-my-notes/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/aluxh/pen-my-notes/edit/master/docs/MISC/git-notes.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -604,11 +827,99 @@
                   
                 
                 
-                <h1 id="pen-my-notes">Pen my notes</h1>
-<p><a href="https://travis-ci.com/aluxh/pen-my-notes"><img alt="Build Status" src="https://travis-ci.com/aluxh/pen-my-notes.svg?branch=master" /></a></p>
-<p>This is my repo for storing notes about my learnings, and my personal cheatsheets of things I do, and learn. And, at the same time, I'm also taking this opportunity to learn CI with <a href="https://travis-ci.com/">Travis CI</a>. </p>
-<p>Currently, the notes are very messy, because I've created them very quickly, without thinking too much about how do structure them, so if you are reading this, please pardon me.</p>
-<p>I'm going to take some time to re-organize my notes (I hope soon).</p>
+                <h1 id="git-notes">Git notes</h1>
+<ul>
+<li><a href="#How-to-git-push-to-an-AWS-EC2-remote-using-a-PEM-file">How to git push to an AWS EC2 remote using a PEM file</a></li>
+<li><a href="#How-to-deploy-your-project-with-a-git-push-on-your-EC2-instance">How to deploy your project with a git push on your EC2 instance</a></li>
+</ul>
+<h2 id="how-to-git-push-to-an-aws-ec2-remote-using-a-pem-file">How to git push to an AWS EC2 remote using a PEM file</h2>
+<p>I learn the following from <a href="https://alphacoder.xyz/git-push-to-an-aws-ec2-remote-using-a-pem-file/">alphacoder</a></p>
+<p>AWS provides a .pem file when creating EC2 instance. We can use this file to generate SSH keys for accessing the instance without using the PEM file.</p>
+<p>To begin, you should use Git Bash if you are using Windows 10, like I do</p>
+<h3 id="copy-private-key-to-ssh-folder">Copy private key to .ssh folder</h3>
+<pre><code>$ cp /path/to/aws-ec2-instance.pem ~/.ssh/id_rsa_ec2
+</code></pre>
+
+<h3 id="generate-and-save-public-key">Generate and save public key</h3>
+<p>Go to ~/.ssh folder, and run</p>
+<pre><code>$ ssh-keygen -y -f aws-ec2-instance.pem &gt; ~/.ssh/id_rsa_ec2.pub
+</code></pre>
+
+<h3 id="add-private-key-to-ssh-agent">Add private key to ssh-agent</h3>
+<p>Start ssh-agent</p>
+<pre><code>$ eval &quot;$(ssh-agent -s)&quot;
+</code></pre>
+
+<p>Then, add your key to the agent</p>
+<pre><code>$ ssh-add ~/.ssh/id_rsa_ec2
+</code></pre>
+
+<p>After that you can access your instance without the PEM file</p>
+<pre><code>$ ssh ubuntu@ec2-ip-address
+</code></pre>
+
+<h2 id="how-to-deploy-your-project-with-a-git-push-on-your-ec2-instance">How to deploy your project with a git push on your EC2 instance</h2>
+<p>I learn the following from <a href="https://kirankoduru.github.io/git/setup-git-on-your-server.html">kirankoduru.github.io</a></p>
+<p>Using the notes from the website, I can host codes on Github, then deploy the code to server by doing git push to EC2 instance. This makes the deployment fast and simple.</p>
+<p>To begin, you should setup the <a href="#How-to-git-push-to-an-AWS-EC2-remote-using-a-PEM-file">git push to AWS EC2 using PEM file</a></p>
+<h3 id="login-to-your-ec2-machine-through-ssh">Login to your EC2 machine through ssh</h3>
+<pre><code>$ ssh ubuntu@ec2-ip-address
+</code></pre>
+
+<h3 id="setup-a-git-bare-repo">Setup a git bare repo</h3>
+<p>This folder/repo will hold the code when you git push to EC2. For example, I'm creating a <em>test</em> project, and the bare git repo is <strong>test.git</strong>. And, in this example, I'm going to store my project in my home folder: <strong>/home/ubuntu/</strong></p>
+<pre><code>sudo mkdir test.git
+cd test.git
+git init --bare
+</code></pre>
+
+<h3 id="create-a-directory-where-you-will-deploy-your-project">Create a directory where you will deploy your project</h3>
+<p>Go to the <strong>/home/ubuntu/</strong>, and create the project folder</p>
+<pre><code>sudo mkdir test
+</code></pre>
+
+<h3 id="setup-git-hook">Setup Git Hook</h3>
+<p>After the above is done, go to the <strong>test.git</strong> folder, and create a file <strong>post-update</strong> using <strong>post-update.sample</strong>.</p>
+<pre><code>cd test.git
+cd hooks
+mv post-update.sample post-update
+</code></pre>
+
+<p>Then, edit the file</p>
+<pre><code>vim post-update
+</code></pre>
+
+<p>In the file, you should include the following:</p>
+<pre><code>#!/bin/sh
+GIT_WORK_TREE=/home/ubuntu/test/ git checkout -f
+</code></pre>
+
+<h3 id="setup-the-git-remote-after-the-above-are-completed">Setup the git remote after the above are completed</h3>
+<p>Logout from the server, and go to your local git repo for project test, and add a remote</p>
+<pre><code>git remote add production ubuntu@ec2-ip-address:/home/ubuntu/test.git
+</code></pre>
+
+<p>Then, you are all done. You can push master branch to remote production and checkout the /home/ubuntu/test directory for the files.</p>
+<pre><code>git push production master
+</code></pre>
+
+<h3 id="in-case-your-push-fails-because-of-permission">In case your push fails because of permission</h3>
+<pre><code>λ git push production master
+Enumerating objects: 176, done.
+Counting objects: 100% (176/176), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (172/172), done.
+Writing objects: 100% (176/176), 660.67 KiB | 4.00 MiB/s, done.
+Total 176 (delta 89), reused 0 (delta 0)
+error: remote unpack failed: unable to create temporary object directory
+To ec2-ip-address:/home/ubuntu/test.git
+ ! [remote rejected] master -&gt; master (unpacker error)
+error: failed to push some refs to 'ubuntu@ec2-ip-address:/home/ubuntu/test.git'
+</code></pre>
+
+<p>You can go to the folder in EC2 and give permission using <code>chmod</code>. I'm not very good at this yet, so I use <code>777</code> for the folder</p>
+<pre><code>chmod -R 777 test.git
+</code></pre>
                 
               
               
@@ -627,14 +938,28 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
+          <a href="../docker-notes/" title="Docker Notes" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Docker Notes
+              </div>
+            </div>
+          </a>
         
-          <a href="MISC/docker-notes/" title="Docker Notes" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../ipython/" title="IPython Magic Commands in Juypter notebooks" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Docker Notes
+                IPython Magic Commands in Juypter notebooks
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -661,15 +986,15 @@
       
     </div>
     
-      <script src="assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="assets/javascripts/bundle.5532dfb7.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5532dfb7.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
-          base: ".",
+          base: "../..",
           features: [],
           search: Object.assign({
-            worker: "assets/javascripts/worker/search.7a2ea5ba.min.js"
+            worker: "../../assets/javascripts/worker/search.7a2ea5ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

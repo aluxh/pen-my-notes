@@ -11,21 +11,21 @@
         <meta name="description" content="Notes about my learnings and cheatsheets">
       
       
-        <link rel="canonical" href="https://aluxh.github.io/pen-my-notes/">
+        <link rel="canonical" href="https://aluxh.github.io/pen-my-notes/MISC/docker-notes/">
       
       
         <meta name="author" content="Alex Ho">
       
-      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.1">
     
     
       
-        <title>Pen my notes</title>
+        <title>Docker Notes - Pen my notes</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.fe0cca5b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
       
       
     
@@ -55,7 +55,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pen-my-notes" class="md-skip">
+        <a href="#docker-notes" class="md-skip">
           Skip to content
         </a>
       
@@ -77,8 +77,15 @@
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
       
-        <div class="md-header-nav__ellipsis md-ellipsis">
-          Pen my notes
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Pen my notes
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Docker Notes
+            
+          </span>
         </div>
       
     </div>
@@ -174,20 +181,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="." title="Pen my notes" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../.." title="Pen my notes" class="md-nav__link">
       Pen my notes
     </a>
-    
   </li>
 
     
@@ -195,10 +193,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       MISC
@@ -220,11 +220,94 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="MISC/docker-notes/" title="Docker Notes" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Docker Notes
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Docker Notes" class="md-nav__link md-nav__link--active">
       Docker Notes
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-an-external-file-to-set-environment-variables-to-a-container" class="md-nav__link">
+    Using an external file to set environment variables to a container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-a-local-folderdirectory-to-the-container" class="md-nav__link">
+    Map a local folder/directory to the container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-postgresql-on-windows-10-with-docker" class="md-nav__link">
+    Setting up PostgreSQL on Windows 10 with Docker
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up PostgreSQL on Windows 10 with Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#removing-the-postgresql-container-including-the-associated-volume" class="md-nav__link">
+    Removing the PostgreSQL container, including the associated volume
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#potential-issues" class="md-nav__link">
+    Potential Issues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-material" class="md-nav__link">
+    Reference Material
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -234,7 +317,7 @@
 
 
   <li class="md-nav__item">
-    <a href="MISC/git-notes/" title="Git notes" class="md-nav__link">
+    <a href="../git-notes/" title="Git notes" class="md-nav__link">
       Git notes
     </a>
   </li>
@@ -246,7 +329,7 @@
 
 
   <li class="md-nav__item">
-    <a href="MISC/ipython/" title="IPython Magic Commands in Juypter notebooks" class="md-nav__link">
+    <a href="../ipython/" title="IPython Magic Commands in Juypter notebooks" class="md-nav__link">
       IPython Magic Commands in Juypter notebooks
     </a>
   </li>
@@ -288,7 +371,7 @@
 
 
   <li class="md-nav__item">
-    <a href="R-and-shiny/r-notes/" title="R notes" class="md-nav__link">
+    <a href="../../R-and-shiny/r-notes/" title="R notes" class="md-nav__link">
       R notes
     </a>
   </li>
@@ -330,7 +413,7 @@
 
 
   <li class="md-nav__item">
-    <a href="data-engineering/aws-sdk/" title="Using AWS SDK to automate Redshift cluster creation and deletion" class="md-nav__link">
+    <a href="../../data-engineering/aws-sdk/" title="Using AWS SDK to automate Redshift cluster creation and deletion" class="md-nav__link">
       Using AWS SDK to automate Redshift cluster creation and deletion
     </a>
   </li>
@@ -342,7 +425,7 @@
 
 
   <li class="md-nav__item">
-    <a href="data-engineering/cassandra/" title="Cassandra" class="md-nav__link">
+    <a href="../../data-engineering/cassandra/" title="Cassandra" class="md-nav__link">
       Cassandra
     </a>
   </li>
@@ -354,7 +437,7 @@
 
 
   <li class="md-nav__item">
-    <a href="data-engineering/odbc_w_r/" title="Notes about ODBC drivers, and how to connect via R" class="md-nav__link">
+    <a href="../../data-engineering/odbc_w_r/" title="Notes about ODBC drivers, and how to connect via R" class="md-nav__link">
       Notes about ODBC drivers, and how to connect via R
     </a>
   </li>
@@ -366,7 +449,7 @@
 
 
   <li class="md-nav__item">
-    <a href="data-engineering/postgres/" title="Notes about PostgreSQL database" class="md-nav__link">
+    <a href="../../data-engineering/postgres/" title="Notes about PostgreSQL database" class="md-nav__link">
       Notes about PostgreSQL database
     </a>
   </li>
@@ -378,7 +461,7 @@
 
 
   <li class="md-nav__item">
-    <a href="data-engineering/redshift-dwh/" title="Notes on Data Warehouse" class="md-nav__link">
+    <a href="../../data-engineering/redshift-dwh/" title="Notes on Data Warehouse" class="md-nav__link">
       Notes on Data Warehouse
     </a>
   </li>
@@ -420,7 +503,7 @@
 
 
   <li class="md-nav__item">
-    <a href="learning-CI-CD/mkdocs-travis-gitpage/" title="Notes about using Mkdocs, Docker, Travis and Github Pages" class="md-nav__link">
+    <a href="../../learning-CI-CD/mkdocs-travis-gitpage/" title="Notes about using Mkdocs, Docker, Travis and Github Pages" class="md-nav__link">
       Notes about using Mkdocs, Docker, Travis and Github Pages
     </a>
   </li>
@@ -462,7 +545,7 @@
 
 
   <li class="md-nav__item">
-    <a href="text-mining/preprocessing-using-qdap-tm-packages/" title="Cheatsheet about pre-processing text using qdap and tm packages" class="md-nav__link">
+    <a href="../../text-mining/preprocessing-using-qdap-tm-packages/" title="Cheatsheet about pre-processing text using qdap and tm packages" class="md-nav__link">
       Cheatsheet about pre-processing text using qdap and tm packages
     </a>
   </li>
@@ -504,7 +587,7 @@
 
 
   <li class="md-nav__item">
-    <a href="time-series/forecast/" title="Forecast using R package" class="md-nav__link">
+    <a href="../../time-series/forecast/" title="Forecast using R package" class="md-nav__link">
       Forecast using R package
     </a>
   </li>
@@ -516,7 +599,7 @@
 
 
   <li class="md-nav__item">
-    <a href="time-series/white-noise/" title="White Noise" class="md-nav__link">
+    <a href="../../time-series/white-noise/" title="White Noise" class="md-nav__link">
       White Noise
     </a>
   </li>
@@ -558,7 +641,7 @@
 
 
   <li class="md-nav__item">
-    <a href="woocommerce-wordpress/woocommerce-config/" title="WooCommerce Setup Notes" class="md-nav__link">
+    <a href="../../woocommerce-wordpress/woocommerce-config/" title="WooCommerce Setup Notes" class="md-nav__link">
       WooCommerce Setup Notes
     </a>
   </li>
@@ -586,6 +669,64 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-an-external-file-to-set-environment-variables-to-a-container" class="md-nav__link">
+    Using an external file to set environment variables to a container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-a-local-folderdirectory-to-the-container" class="md-nav__link">
+    Map a local folder/directory to the container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-postgresql-on-windows-10-with-docker" class="md-nav__link">
+    Setting up PostgreSQL on Windows 10 with Docker
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up PostgreSQL on Windows 10 with Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#removing-the-postgresql-container-including-the-associated-volume" class="md-nav__link">
+    Removing the PostgreSQL container, including the associated volume
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#potential-issues" class="md-nav__link">
+    Potential Issues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-material" class="md-nav__link">
+    Reference Material
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -596,7 +737,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/aluxh/pen-my-notes/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/aluxh/pen-my-notes/edit/master/docs/MISC/docker-notes.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -604,11 +745,64 @@
                   
                 
                 
-                <h1 id="pen-my-notes">Pen my notes</h1>
-<p><a href="https://travis-ci.com/aluxh/pen-my-notes"><img alt="Build Status" src="https://travis-ci.com/aluxh/pen-my-notes.svg?branch=master" /></a></p>
-<p>This is my repo for storing notes about my learnings, and my personal cheatsheets of things I do, and learn. And, at the same time, I'm also taking this opportunity to learn CI with <a href="https://travis-ci.com/">Travis CI</a>. </p>
-<p>Currently, the notes are very messy, because I've created them very quickly, without thinking too much about how do structure them, so if you are reading this, please pardon me.</p>
-<p>I'm going to take some time to re-organize my notes (I hope soon).</p>
+                <h1 id="docker-notes">Docker Notes</h1>
+<p>Notes taken from reading how to use Docker online.</p>
+<h2 id="using-an-external-file-to-set-environment-variables-to-a-container">Using an external file to set environment variables to a container</h2>
+<p>Using the <code>env_file</code> configuration option, you can pass multiple environment variables from an external file through to a service's container. It works like <code>docker run --env-file=FILE ...</code>.</p>
+<p>In the <code>docker-compose.yml</code>, do the following setup</p>
+<pre><code class="docker">services:
+    jupyter:
+        ...
+        env_file:
+            - my_variable.env
+</code></pre>
+
+<p>The <code>my_variable.env</code> looks like this:</p>
+<pre><code class="bash">DEBUG=1
+TAG=v1.4
+</code></pre>
+
+<h2 id="map-a-local-folderdirectory-to-the-container">Map a local folder/directory to the container</h2>
+<p>The <code>%cd%</code> refers to the current directory/folder that you are in. And, map that to a directory inside the container. Recommendation is to navigate to the directory, then run the following command on Windows command prompt.</p>
+<p>```command prompt
+docker run --rm -it -v %cd%:/data <container-name></p>
+<pre><code>
+If you are using Windows Powershell,
+
+```powershell
+docker run --rm -it -v ${PWD}:/data &lt;container-name&gt;
+</code></pre>
+
+<p>And, if you are using Linux or Mac OS,</p>
+<pre><code class="bash">docker run --rm -it -v `pwd`:/data &lt;container-name&gt;
+</code></pre>
+
+<h2 id="setting-up-postgresql-on-windows-10-with-docker">Setting up PostgreSQL on Windows 10 with Docker</h2>
+<p>Setting up a container running Postgres and expose the port used by Postgres to allow access from the host.</p>
+<p><code>docker run -p 5432:5432 --name yourContainerName -e POSTGRES_PASSWORD=yourPassword -d postgres</code></p>
+<p>The problem using above approach is the risk of losing data, if rebuilding the container is necessary. Therefore, it is advisable to use a secondary container to hold the data, separating it from the Postgres container.</p>
+<p>The following command will create the data container using the Alpine image. You can read about this in the links under the <em>Reference Material</em>.</p>
+<p><code>docker create -v /var/lib/postgresql/data --name PostgresData alpine</code></p>
+<p><strong>Important note:</strong> The -v parameter must match the path that Postgres expects.</p>
+<p>Then, you can set up a container that uses the data container as storage:</p>
+<p><code>docker run -p 5432:5432 --name yourContainerName -e POSTGRES_PASSWORD=yourPassword -d --volumes-from PostgresData postgres</code></p>
+<h3 id="removing-the-postgresql-container-including-the-associated-volume">Removing the PostgreSQL container, including the associated volume</h3>
+<p>Technically, your data will not be lost unless you use the -v flag when you remove the container.</p>
+<p><code>docker rm -v yourContainerName</code></p>
+<p>If you neglect to include the -v flag when removing the container, the data will remain in a dangling volume and, while still present on your host’s file system, not very easy to work with and not automatically mounted when you start a new postgresql container.</p>
+<h3 id="potential-issues">Potential Issues</h3>
+<ol>
+<li>This is an error I received on Apr 13, 2019. You might receive error that says</li>
+</ol>
+<p><code>docker: Error response from daemon: driver failed programming external connectivity on endpoint ...: Error starting userland proxy: mkdir /port/tcp:0.0.0.0:5432:tcp:172.17.0.2:5432: input/output error.</code></p>
+<p>You need to quite/close the Docker Desktop, and restart the Docker Desktop. Then, it will work.</p>
+<h3 id="reference-material">Reference Material</h3>
+<ul>
+<li><a href="http://elanderson.net/2018/02/setup-postgresql-on-windows-with-docker/">Setup PostgreSQL on Windows with Docker</a></li>
+<li><a href="http://ryaneschinger.com/blog/dockerized-postgresql-development-environment/">Dockerized Postgresql Development Environment</a></li>
+<li><a href="https://severalnines.com/database-blog/deploying-postgresql-docker-container">Deploying PostgreSQL on a Docker Container</a></li>
+<li><a href="https://www.datascienceatthecommandline.com/">Data Science at the command line</a></li>
+</ul>
                 
               
               
@@ -627,14 +821,28 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
+          <a href="../.." title="Pen my notes" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Pen my notes
+              </div>
+            </div>
+          </a>
         
-          <a href="MISC/docker-notes/" title="Docker Notes" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../git-notes/" title="Git notes" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Docker Notes
+                Git notes
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -661,15 +869,15 @@
       
     </div>
     
-      <script src="assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="assets/javascripts/bundle.5532dfb7.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5532dfb7.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
-          base: ".",
+          base: "../..",
           features: [],
           search: Object.assign({
-            worker: "assets/javascripts/worker/search.7a2ea5ba.min.js"
+            worker: "../../assets/javascripts/worker/search.7a2ea5ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
