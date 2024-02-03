@@ -1,4 +1,10 @@
-# Using AWS SDK to automate Redshift cluster creation and deletion
+# Using AWS SDK to deploy and delete AWS Redshift Cluster
+
+The following scripts
+
+
+
+
 
 Learnings from the [Udacity Data Engineering Nanodegree](https://www.udacity.com/course/data-engineer-nanodegree--nd027). 
 
